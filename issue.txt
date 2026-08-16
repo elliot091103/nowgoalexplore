@@ -1,2 +1,3 @@
 Player info
 - position_id in player id is actualy market value (done)
+- the start should be normal league start while the substitutions should be cupmatch start for player info countsum
