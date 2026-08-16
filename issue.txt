@@ -1,0 +1,2 @@
+Player info
+- position_id in player id is actualy market value (done)
