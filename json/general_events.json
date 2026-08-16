@@ -1,0 +1,153 @@
+{
+    "ErrCode": 0,
+    "Data": {
+        "Count": 6,
+        "HomeTeam": {
+            "MatchRsult": [
+                {
+                    "Result": 0,
+                    "MatchTime": {
+                        "Seconds": 1785763800,
+                        "Nanos": 0
+                    }
+                },
+                {
+                    "Result": 0,
+                    "MatchTime": {
+                        "Seconds": 1785763800,
+                        "Nanos": 0
+                    }
+                },
+                {
+                    "Result": 0,
+                    "MatchTime": {
+                        "Seconds": 1785763800,
+                        "Nanos": 0
+                    }
+                },
+                {
+                    "Result": 1,
+                    "MatchTime": {
+                        "Seconds": 1785502800,
+                        "Nanos": 0
+                    }
+                },
+                {
+                    "Result": 1,
+                    "MatchTime": {
+                        "Seconds": 1785502800,
+                        "Nanos": 0
+                    }
+                },
+                {
+                    "Result": 1,
+                    "MatchTime": {
+                        "Seconds": 1785502800,
+                        "Nanos": 0
+                    }
+                }
+            ],
+            "TechStat": [
+                {
+                    "Item": 0,
+                    "ItemResult": "1.50",
+                    "Title": "Goal"
+                },
+                {
+                    "Item": 1,
+                    "ItemResult": "0.00",
+                    "Title": "Loss"
+                },
+                {
+                    "Item": 2,
+                    "ItemResult": "4.50",
+                    "Title": "Corner Kicks"
+                },
+                {
+                    "Item": 3,
+                    "ItemResult": "0.50",
+                    "Title": "Yellow Cards"
+                },
+                {
+                    "Item": 4,
+                    "ItemResult": "47.67",
+                    "Title": "Possession"
+                }
+            ]
+        },
+        "AwayTeam": {
+            "MatchRsult": [
+                {
+                    "Result": 0,
+                    "MatchTime": {
+                        "Seconds": 1785753000,
+                        "Nanos": 0
+                    }
+                },
+                {
+                    "Result": 0,
+                    "MatchTime": {
+                        "Seconds": 1785753000,
+                        "Nanos": 0
+                    }
+                },
+                {
+                    "Result": 0,
+                    "MatchTime": {
+                        "Seconds": 1785753000,
+                        "Nanos": 0
+                    }
+                },
+                {
+                    "Result": 2,
+                    "MatchTime": {
+                        "Seconds": 1785159000,
+                        "Nanos": 0
+                    }
+                },
+                {
+                    "Result": 2,
+                    "MatchTime": {
+                        "Seconds": 1785159000,
+                        "Nanos": 0
+                    }
+                },
+                {
+                    "Result": 2,
+                    "MatchTime": {
+                        "Seconds": 1785159000,
+                        "Nanos": 0
+                    }
+                }
+            ],
+            "TechStat": [
+                {
+                    "Item": 0,
+                    "ItemResult": "2.00",
+                    "Title": "Goal"
+                },
+                {
+                    "Item": 1,
+                    "ItemResult": "2.50",
+                    "Title": "Loss"
+                },
+                {
+                    "Item": 2,
+                    "ItemResult": "5.00",
+                    "Title": "Corner Kicks"
+                },
+                {
+                    "Item": 3,
+                    "ItemResult": "1.00",
+                    "Title": "Yellow Cards"
+                },
+                {
+                    "Item": 4,
+                    "ItemResult": "37.67",
+                    "Title": "Possession"
+                }
+            ]
+        }
+    },
+    "MatchState": 0
+}

@@ -1,0 +1,462 @@
+[
+    {
+        "playerId": 105844,
+        "playerName": "Quique Setien",
+        "playerPic": "images/105844/1jmpdqc0rj1y.png?gj=cn",
+        "teamId": 107,
+        "money": "-",
+        "time": "26-10-2022",
+        "type": 1,
+        "isJoined": false
+    },
+    {
+        "playerId": 28613,
+        "playerName": "Miralem Pjanic",
+        "playerPic": "images/28613/1jed86sbwa2j.png",
+        "teamId": 3435,
+        "money": "-",
+        "time": "07-09-2022",
+        "type": 3,
+        "isJoined": false
+    },
+    {
+        "playerId": 64796,
+        "playerName": "Pierre-Emerick Aubameyang",
+        "playerPic": "images/166245423161.png",
+        "teamId": 24,
+        "money": "£12M",
+        "time": "01-09-2022",
+        "type": 1,
+        "isJoined": false
+    },
+    {
+        "playerId": 171342,
+        "playerName": "Sergino Dest",
+        "playerPic": "images/166832494036.png",
+        "teamId": 150,
+        "money": "-",
+        "time": "01-09-2022",
+        "type": 2,
+        "isJoined": false
+    },
+    {
+        "playerId": 219862,
+        "playerName": "Abdessamad Ezzalzouli",
+        "playerPic": "images/16691696790.png",
+        "teamId": 94,
+        "money": "-",
+        "time": "01-09-2022",
+        "type": 2,
+        "isJoined": false
+    },
+    {
+        "playerId": 77009,
+        "playerName": "Martin Braithwaite",
+        "playerPic": "images/166900938964.png",
+        "teamId": 100,
+        "money": "-",
+        "time": "01-09-2022",
+        "type": 3,
+        "isJoined": false
+    },
+    {
+        "playerId": 79037,
+        "playerName": "Samuel Umtiti",
+        "playerPic": "images/2018619144122.jpg",
+        "teamId": 158,
+        "money": "£0.5M",
+        "time": "25-08-2022",
+        "type": 2,
+        "isJoined": false
+    },
+    {
+        "playerId": 190942,
+        "playerName": "Alex Collado Gutierrez",
+        "playerPic": "images/190942/1jf1qpthbn2f.png",
+        "teamId": 126,
+        "money": "-",
+        "time": "15-08-2022",
+        "type": 2,
+        "isJoined": false
+    },
+    {
+        "playerId": 218402,
+        "playerName": "Nicolas Gonzalez Iglesias",
+        "playerPic": "images/218402/1je8d2pawm2p.png",
+        "teamId": 91,
+        "money": "-",
+        "time": "13-08-2022",
+        "type": 2,
+        "isJoined": false
+    },
+    {
+        "playerId": 164464,
+        "playerName": "Norberto Murara Neto",
+        "playerPic": "images/1j6kx1m3831n.png",
+        "teamId": 348,
+        "money": "-",
+        "time": "07-08-2022",
+        "type": 3,
+        "isJoined": false
+    },
+    {
+        "playerId": 175083,
+        "playerName": "Riqui Puig",
+        "playerPic": "images/175083/1jc5fbp9ga1p.png",
+        "teamId": 311,
+        "money": "-",
+        "time": "04-08-2022",
+        "type": 3,
+        "isJoined": false
+    },
+    {
+        "playerId": 166884,
+        "playerName": "Oscar Mingueza",
+        "playerPic": "images/1j5j9m5x739.png",
+        "teamId": 114,
+        "money": "-",
+        "time": "30-07-2022",
+        "type": 3,
+        "isJoined": false
+    },
+    {
+        "playerId": 2527,
+        "playerName": "Daniel Alves da Silva",
+        "playerPic": "images/166893864277.png",
+        "teamId": 1334,
+        "money": "-",
+        "time": "23-07-2022",
+        "type": 3,
+        "isJoined": false
+    },
+    {
+        "playerId": 151247,
+        "playerName": "Moussa Wague",
+        "playerPic": "images/2018619155056.jpg",
+        "teamId": 20401,
+        "money": "-",
+        "time": "22-07-2022",
+        "type": 3,
+        "isJoined": false
+    },
+    {
+        "playerId": 146547,
+        "playerName": "Francisco Trincao",
+        "playerPic": "images/1jemf0jy2324.png",
+        "teamId": 466,
+        "money": "£3M",
+        "time": "13-07-2022",
+        "type": 2,
+        "isJoined": false
+    },
+    {
+        "playerId": 130036,
+        "playerName": "Rey Manaj",
+        "playerPic": "images/20151218172419.jpg",
+        "teamId": 53,
+        "money": "-",
+        "time": "12-07-2022",
+        "type": 3,
+        "isJoined": false
+    },
+    {
+        "playerId": 125561,
+        "playerName": "Clement Lenglet",
+        "playerPic": "images/125561/1jcamhm7ap3.png",
+        "teamId": 33,
+        "money": "-",
+        "time": "08-07-2022",
+        "type": 2,
+        "isJoined": false
+    },
+    {
+        "playerId": 119082,
+        "playerName": "Txingurri Valverde",
+        "playerPic": "images/119082/1kbveddrv91f.png",
+        "teamId": 92,
+        "money": "-",
+        "time": "01-07-2022",
+        "type": 1,
+        "isJoined": false
+    },
+    {
+        "playerId": 28595,
+        "playerName": "Philippe Coutinho Correia",
+        "playerPic": "images/201861312907.png",
+        "teamId": 20,
+        "money": "£20M",
+        "time": "01-07-2022",
+        "type": 1,
+        "isJoined": false
+    },
+    {
+        "playerId": 117824,
+        "playerName": "Adama Traore Diarra",
+        "playerPic": "images/117824/1jc2p51h8x1r.png",
+        "teamId": 52,
+        "money": "-",
+        "time": "30-06-2022",
+        "type": 4,
+        "isJoined": false
+    },
+    {
+        "playerId": 55677,
+        "playerName": "Luuk de Jong",
+        "playerPic": "images/55677/1k25nwdwnv1g.png",
+        "teamId": 86,
+        "money": "-",
+        "time": "30-06-2022",
+        "type": 4,
+        "isJoined": false
+    },
+    {
+        "playerId": 178688,
+        "playerName": "Ignacio Pena Sotorres",
+        "playerPic": "images/1j5wcr8bqc2h.jpg",
+        "teamId": 516,
+        "money": "-",
+        "time": "31-01-2022",
+        "type": 2,
+        "isJoined": false
+    },
+    {
+        "playerId": 177954,
+        "playerName": "Yusuf Demir",
+        "playerPic": "images/177954/1jgtnkcqsmv.png",
+        "teamId": 12,
+        "money": "-",
+        "time": "13-01-2022",
+        "type": 4,
+        "isJoined": false
+    },
+    {
+        "playerId": 28595,
+        "playerName": "Philippe Coutinho Correia",
+        "playerPic": "images/201861312907.png",
+        "teamId": 20,
+        "money": "-",
+        "time": "07-01-2022",
+        "type": 2,
+        "isJoined": false
+    },
+    {
+        "playerId": 190942,
+        "playerName": "Alex Collado Gutierrez",
+        "playerPic": "images/190942/1jf1qpthbn2f.png",
+        "teamId": 121,
+        "money": "-",
+        "time": "07-01-2022",
+        "type": 2,
+        "isJoined": false
+    },
+    {
+        "playerId": 134015,
+        "playerName": "Alfred Schreuder",
+        "playerPic": "",
+        "teamId": 148,
+        "money": "-",
+        "time": "03-01-2022",
+        "type": 1,
+        "isJoined": false
+    },
+    {
+        "playerId": 75513,
+        "playerName": "Marcos Alonso",
+        "playerPic": "images/75513/1jcamke0qs1a.png",
+        "teamId": 24,
+        "money": "-",
+        "time": "01-09-2022",
+        "type": 3,
+        "isJoined": true
+    },
+    {
+        "playerId": 106100,
+        "playerName": "Hector Bellerin",
+        "playerPic": "images/1j5fpt4b6a1p.png",
+        "teamId": 19,
+        "money": "-",
+        "time": "01-09-2022",
+        "type": 3,
+        "isJoined": true
+    },
+    {
+        "playerId": 139575,
+        "playerName": "Jules Kounde",
+        "playerPic": "images/139575/1jcam0gybb11.png",
+        "teamId": 86,
+        "money": "£50M",
+        "time": "28-07-2022",
+        "type": 1,
+        "isJoined": true
+    },
+    {
+        "playerId": 60961,
+        "playerName": "Robert Lewandowski",
+        "playerPic": "images/1j0ag2abc716.png",
+        "teamId": 88,
+        "money": "£45M",
+        "time": "19-07-2022",
+        "type": 1,
+        "isJoined": true
+    },
+    {
+        "playerId": 150899,
+        "playerName": "Raphael Dias Belloli",
+        "playerPic": "images/150899/1jcam0gyby1w.png",
+        "teamId": 56,
+        "money": "£58M",
+        "time": "13-07-2022",
+        "type": 1,
+        "isJoined": true
+    },
+    {
+        "playerId": 117539,
+        "playerName": "Franck Kessie",
+        "playerPic": "images/2019823185258.jpg",
+        "teamId": 150,
+        "money": "-",
+        "time": "04-07-2022",
+        "type": 3,
+        "isJoined": true
+    },
+    {
+        "playerId": 113160,
+        "playerName": "Andreas Christensen",
+        "playerPic": "images/113160/1jcam0gxwx1y.png",
+        "teamId": 24,
+        "money": "-",
+        "time": "04-07-2022",
+        "type": 3,
+        "isJoined": true
+    },
+    {
+        "playerId": 73564,
+        "playerName": "Pablo Torre",
+        "playerPic": "images/1j5wdfnaks1q.jpg",
+        "teamId": 104,
+        "money": "£6M",
+        "time": "01-07-2022",
+        "type": 1,
+        "isJoined": true
+    },
+    {
+        "playerId": 218401,
+        "playerName": "Alejandro Balde",
+        "playerPic": "images/218401/1jcam0gzb31a.png",
+        "teamId": 3224,
+        "money": "-",
+        "time": "01-07-2022",
+        "type": 1,
+        "isJoined": true
+    },
+    {
+        "playerId": 219862,
+        "playerName": "Abdessamad Ezzalzouli",
+        "playerPic": "images/16691696790.png",
+        "teamId": 3224,
+        "money": "-",
+        "time": "01-07-2022",
+        "type": 1,
+        "isJoined": true
+    },
+    {
+        "playerId": 130036,
+        "playerName": "Rey Manaj",
+        "playerPic": "images/20151218172419.jpg",
+        "teamId": 1390,
+        "money": "-",
+        "time": "30-06-2022",
+        "type": 4,
+        "isJoined": true
+    },
+    {
+        "playerId": 146547,
+        "playerName": "Francisco Trincao",
+        "playerPic": "images/1jemf0jy2324.png",
+        "teamId": 52,
+        "money": "-",
+        "time": "30-06-2022",
+        "type": 4,
+        "isJoined": true
+    },
+    {
+        "playerId": 178688,
+        "playerName": "Ignacio Pena Sotorres",
+        "playerPic": "images/1j5wcr8bqc2h.jpg",
+        "teamId": 516,
+        "money": "-",
+        "time": "30-06-2022",
+        "type": 4,
+        "isJoined": true
+    },
+    {
+        "playerId": 28595,
+        "playerName": "Philippe Coutinho Correia",
+        "playerPic": "images/201861312907.png",
+        "teamId": 20,
+        "money": "-",
+        "time": "30-06-2022",
+        "type": 4,
+        "isJoined": true
+    },
+    {
+        "playerId": 190942,
+        "playerName": "Alex Collado Gutierrez",
+        "playerPic": "images/190942/1jf1qpthbn2f.png",
+        "teamId": 121,
+        "money": "-",
+        "time": "30-06-2022",
+        "type": 4,
+        "isJoined": true
+    },
+    {
+        "playerId": 28613,
+        "playerName": "Miralem Pjanic",
+        "playerPic": "images/28613/1jed86sbwa2j.png",
+        "teamId": 529,
+        "money": "-",
+        "time": "30-06-2022",
+        "type": 4,
+        "isJoined": true
+    },
+    {
+        "playerId": 64796,
+        "playerName": "Pierre-Emerick Aubameyang",
+        "playerPic": "images/166245423161.png",
+        "teamId": 19,
+        "money": "-",
+        "time": "31-01-2022",
+        "type": 3,
+        "isJoined": true
+    },
+    {
+        "playerId": 178688,
+        "playerName": "Ignacio Pena Sotorres",
+        "playerPic": "images/1j5wcr8bqc2h.jpg",
+        "teamId": 3224,
+        "money": "-",
+        "time": "30-01-2022",
+        "type": 1,
+        "isJoined": true
+    },
+    {
+        "playerId": 117824,
+        "playerName": "Adama Traore Diarra",
+        "playerPic": "images/117824/1jc2p51h8x1r.png",
+        "teamId": 52,
+        "money": "-",
+        "time": "29-01-2022",
+        "type": 2,
+        "isJoined": true
+    },
+    {
+        "playerId": 161804,
+        "playerName": "Ferran Torres Garcia",
+        "playerPic": "images/161804/1jcam0gxwf5.png",
+        "teamId": 26,
+        "money": "£55M",
+        "time": "01-01-2022",
+        "type": 1,
+        "isJoined": true
+    }
+]
