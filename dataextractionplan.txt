@@ -1,0 +1,85 @@
+Extract all data flow
+
+1. Extract league, season
+2. Extract team, league full name, schedule, standings, team season tech (use league id and season from 1)
+https://football.nowgoal.net/jsData/matchResult/json/{season}/{c / s depend on the league type}{league_id}_en.json
+2.1 Extract player season tech from this url
+https://football.nowgoal.net/jsData/Count/json/{season}/playerTech_{league_id}_en.json (use league id and season from 1)
+3. Extract player general info (transfer, basic info, total stats) from this url
+	https://football.nowgoal.net/jsData/playerInfo/player{player_id}_en.json (use player_ids from 2)
+4. Extract team info from this url
+https://football.nowgoal.net/jsdata/teamInfo/teamdetail/json/tdl{team_id}_en.json (use team id from 2)
+5. Extract team transfer history from this url
+https://football.nowgoal.net/ajax/GetTeamTransferByYear?teamId={team_id}&year={season} (use the team id from 2, and TransferSeason from 4, any player id from transfer data that not exist yet will be extract using the url at 3)
+6. Extract player match tech stats from this url 
+https://www.nowgoal.net/Ajax/SoccerAjax?type=18&id={match_id} (match_id from schedule of 2, only get if the match is already played)
+7. Extract team tech stat, match event and key event, line up will need to extract from raw html
+https://www.nowgoal.net/match/live-3061002
+8. Extract detail odd movement from this url (match id from schedule of 2, other params will be check as the dict below, only extract if game already played)
+
+https://www.nowgoal.net/ajax/soccerajax?type=14&=&id={match_id}&t={odd_type}&cid={bookmaker_id}&h={is_halftime}&r1=0&r2=0&r3=0&flesh=0.8322862800944925 
+
+NOWGOAL_ODDS_PARAMS_MAP = {
+    "cid": {
+        "description": "Bookmaker / Company ID",
+        "values": {
+            1: "Macauslot",
+            3: "Crown",
+            4: "Ladbrokes",
+            8: "Bet365",
+            12: "Easybet",
+            14: "Vcbet",
+            17: "M88",
+            19: "Interwetten",
+            24: "12Bet",
+            31: "Sbobet",
+            42: "18Bet",
+            50: "1xBet",
+        },
+    },
+    "t": {
+        "description": "Odds Market / View Type",
+        "values": {
+            10: "All Odds (Instant / Live summary)",
+            20: "3in1 Odds (AH, 1X2, and O/U trend details)",
+            25: "Correct Score (BoDan)",
+            26: "Euro Handicap",
+            27: "Double Chance",
+            28: "Corners Over/Under",
+        },
+    },
+    "h": {
+        "description": "Match Period Scope",
+        "values": {
+            0: "Full Time (FT)",
+            1: "Half Time (HT)",
+        },
+    },
+    "r1": {
+        "description": "Asian Handicap loaded row count / offset (ahRow for polling)",
+    },
+    "r2": {
+        "description": "1X2 / European Odds loaded row count / offset (opRow for polling)",
+    },
+    "r3": {
+        "description": "Over/Under loaded row count / offset (ouRow for polling)",
+    },
+}
+
+
+Extract data incrementally flow
+1. Extract match state 
+
+https://www.nowgoal.net/Ajax/SoccerAjax?type=11&id=2991085
+
+{"ErrCode":0,"Data":{"state":-1,"time":"2026-08-15 12:36:29","html":"
+3
+Finished
+(1-0,2-1)
+1
+","injuryTime":""},"MatchState":0}	
+
+
+Showing fast match feed, not sure how useful this is compare to the match state one
+
+https://www.nowgoal.net/gf/data/change_en.xml
