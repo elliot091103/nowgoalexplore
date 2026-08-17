@@ -1,0 +1,2710 @@
+<body id="soccer" class="" style="">
+    <div id="tongji" style="display:none">
+        <script type="text/javascript" src="/Scripts/ng/tongji.js?1786979144336"></script>
+    </div>
+    <script type="text/javascript">
+        if (typeof (LoadDark) == "function") LoadDark();
+        /*谷歌统计*/
+        window.addEventListener("load", function () {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "/Scripts/" + _moduleKey + "/tongji.js?" + (new Date()).getTime();
+            document.getElementById("tongji").append(script);
+        })
+    </script>
+
+
+
+
+    <script type="text/javascript">
+        const _sclassName = escapeChar("ASEAN Championship");
+    </script>
+
+    <div class="mcontent">
+
+
+
+        <div id="imagePopWin" class="ADpopbox v2" style="display:none;">
+            <i class="closebtn" onclick="closeImgPopWin(20260529150724,24)"></i>
+            <p>Join Battle Now<span>Register and get 10 diamonds! Only 1 week left to claim your reward!</span></p>
+            <button onclick="goToPopWinLink('null',1)">Sign Up <i></i></button>
+            <img class="adimg" src="//imgcms.thscore.fun//UploadImg/homepage/20260529150522692.jpg">
+        </div>
+
+        <script>
+            function initPopWin() {
+                $.get("/templatedata/popwin.txt?t=" + new Date().getTime(), result => {
+                    let data = JSON.parse(result)
+                    if (!data) return;
+
+                    let { id, hour, img, button, text, text2, link, openpc, showType } = data;
+                    let box = $("#imagePopWin")
+
+                    box.addClass("v2");
+
+                    box.append(`
+                <i class="closebtn" onclick="closeImgPopWin(${id},${hour})"></i>
+                <p>${text}${text2 ? `<span>${text2}</span>` : ""}</p>
+                <button onclick="goToPopWinLink('${link}',${showType})">${button}<i></i></button>
+                <img class="adimg" src="${img}" />
+                `)
+
+                    let click = getCookie(`popWin_${id}`)
+                    if (!click && openpc) {
+                        setTimeout(() => {
+                            box.show()
+                            writeShareCookie(`popWin_${id}`, "1", new Date(new Date().getTime() + 1000 * 3600 * hour))
+                        }, 1000)
+                    }
+                })
+            }
+            initPopWin()
+
+            function goToPopWinLink(link, showType) {
+                $("#imagePopWin .closebtn").click()
+                if (showType == 1) {
+                    let tipsUrl = '//tips.nowgoal.net/'.replace(/\/+$/, '')
+                    if (!isUserLogin()) {
+                        handleBackFromBf2(`${tipsUrl}/account/register`)
+                    } else {
+                        if (1 == 1) {
+                            location.href = `${tipsUrl}${prefix}/#pk`
+                        }
+                    }
+                } else {
+                    window.open(link)
+                }
+            }
+
+            function closeImgPopWin(id, hour) {
+                $("#imagePopWin").hide()
+                writeShareCookie(`popWin_${id}`, "1", new Date(new Date().getTime() + 1000 * 3600 * hour))
+            }
+        </script>
+        <div id="header-wrapper">
+            <div id="top-tools">
+                <div class="top-tools-c">
+                    <div class="top-tools-left">
+                        <div class="top-tools-btn on" onclick="OpenFreeApp()">APP</div>
+                        <div class="top-tools-btn" onclick="OpenMobile()">Mobile</div>
+                        <div class="Choose-tool" id="chooseTimeZone" style="width: 80px"
+                            onclick="showHideTimeZone(this)">
+                            <span id="selectedTimeZone">Automatic</span><i></i>
+                            <ul id="ddlTimeZone" style="display:none;">
+                                <li onclick="changeTopTimeZone('')" id="timeZone_auto">Automatic</li>
+                                <li onclick="changeTopTimeZone(-11)" id="timeZone_-11">GMT -11</li>
+                                <li onclick="changeTopTimeZone(-10)" id="timeZone_-10">GMT -10</li>
+                                <li onclick="changeTopTimeZone(-9)" id="timeZone_-9">GMT -9</li>
+                                <li onclick="changeTopTimeZone(-8)" id="timeZone_-8">GMT -8</li>
+                                <li onclick="changeTopTimeZone(-7)" id="timeZone_-7">GMT -7</li>
+                                <li onclick="changeTopTimeZone(-6)" id="timeZone_-6">GMT -6</li>
+                                <li onclick="changeTopTimeZone(-5)" id="timeZone_-5">GMT -5</li>
+                                <li onclick="changeTopTimeZone(-4.5)" id="timeZone_-4.5">GMT -4.5</li>
+                                <li onclick="changeTopTimeZone(-4)" id="timeZone_-4">GMT -4</li>
+                                <li onclick="changeTopTimeZone(-3.5)" id="timeZone_-3.5">GMT -3.5</li>
+                                <li onclick="changeTopTimeZone(-3)" id="timeZone_-3">GMT -3</li>
+                                <li onclick="changeTopTimeZone(-2)" id="timeZone_-2">GMT -2</li>
+                                <li onclick="changeTopTimeZone(-1)" id="timeZone_-1">GMT -1</li>
+                                <li onclick="changeTopTimeZone(0)" id="timeZone_0">GMT 0</li>
+                                <li onclick="changeTopTimeZone(1)" id="timeZone_1">GMT +1</li>
+                                <li onclick="changeTopTimeZone(2)" id="timeZone_2">GMT +2</li>
+                                <li onclick="changeTopTimeZone(3)" id="timeZone_3">GMT +3</li>
+                                <li onclick="changeTopTimeZone(3.5)" id="timeZone_3.5">GMT +3.5</li>
+                                <li onclick="changeTopTimeZone(4)" id="timeZone_4">GMT +4</li>
+                                <li onclick="changeTopTimeZone(5)" id="timeZone_5">GMT +5</li>
+                                <li onclick="changeTopTimeZone(5.5)" id="timeZone_5.5">GMT +5.5</li>
+                                <li onclick="changeTopTimeZone(5.75)" id="timeZone_5.75">GMT +5.75</li>
+                                <li onclick="changeTopTimeZone(6)" id="timeZone_6">GMT +6</li>
+                                <li onclick="changeTopTimeZone(6.5)" id="timeZone_6.5">GMT +6.5</li>
+                                <li onclick="changeTopTimeZone(7)" id="timeZone_7">GMT +7</li>
+                                <li onclick="changeTopTimeZone(8)" id="timeZone_8">GMT +8</li>
+                                <li onclick="changeTopTimeZone(9)" id="timeZone_9">GMT +9</li>
+                                <li onclick="changeTopTimeZone(9.5)" id="timeZone_9.5">GMT +9.5</li>
+                                <li onclick="changeTopTimeZone(10)" id="timeZone_10">GMT +10</li>
+                                <li onclick="changeTopTimeZone(10.5)" id="timeZone_10.5">GMT +10.5</li>
+                                <li onclick="changeTopTimeZone(11)" id="timeZone_11">GMT +11</li>
+                                <li onclick="changeTopTimeZone(12)" id="timeZone_12">GMT +12</li>
+                                <li onclick="changeTopTimeZone(13)" id="timeZone_13">GMT +13</li>
+                            </ul>
+                        </div>
+                        <div class="Choose-tool" id="chooseOddsType" style="width: 110px"
+                            onclick="showHideOddsType(this)">
+                            <span id="selectedOddsType">Hong Kong Odds</span><i></i>
+                            <ul id="ddlOddsType" style="display:none;">
+                                <li onclick="changeTopOddsType(4)" id="oddsType_4">Decimal Odds</li>
+                                <li onclick="changeTopOddsType(1)" id="oddsType_1">Hong Kong Odds</li>
+                                <li onclick="changeTopOddsType(2)" id="oddsType_2">Indonesian Odds</li>
+                                <li onclick="changeTopOddsType(3)" id="oddsType_3">American Odds</li>
+                                <li onclick="changeTopOddsType(5)" id="oddsType_5">Malay Odds</li>
+
+                            </ul>
+                        </div>
+                        <div class="theme-div">
+                            <label for="DarkModeCheck" class="theme">
+                                <input type="checkbox" name="DarkModeCheck" id="DarkModeCheck" onclick="SwithcDark();">
+                                <span class="theme-style"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="top-tools-right">
+                        <div class="Choose-tool" id="chooseLanguege">
+                            <img id="currImg" class="flagimg" src="/Images/country/world.png"><span
+                                id="selectedLanguage">English</span><i></i>
+                            <ul id="ddlLanguage" class="ys_hide">
+                                <li v-data="1" onclick="ChangeLanguage(this)"><img class="flagimg"
+                                        src="/Images/country/world.png">English</li>
+                                <li v-data="2" onclick="ChangeLanguage(this)"><img class="flagimg"
+                                        src="/Images/country/vietnam.png">Vietnam</li>
+                                <li v-data="3" onclick="ChangeLanguage(this)"><img class="flagimg"
+                                        src="/Images/country/thailand.png">Thailand</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <link href="/content/swiper?v=n4JLOCNF-lufFsDCxIY9jEB4plaOlhcdgjIWnUn1MXw1" rel="stylesheet">
+
+
+                    <div class="top-notice">
+                        <div class="top-tools-left2 swiper-container" style="height:36px;margin:0">
+                            <div class="swiper-wrapper" id="noteSwiper">
+                                <a class="swiper-slide" href="https://www.nowgoal26.com/" target="_blank">
+                                    Alternative: Nowgoal26.com / Nowgoal.net
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script type="text/javascript" src="/scripts/common/swiper-bundle.min.js" defer=""></script>
+
+                    <script>
+                        $(document).ready(function () {
+                            //滚动公告
+                            if ($("#noteSwiper").children("a[class^=swiper-slide]").length > 1) {
+                                var anoteSwiper = new Swiper('.swiper-container', {
+                                    direction: 'vertical',
+                                    loop: true,
+                                    autoplay: {
+                                        delay: 5000,
+                                        disableOnInteraction: false
+                                    },
+                                })
+                            }
+                        })
+                    </script>
+                </div>
+            </div>
+            <script type="text/javascript">
+                document.getElementById('selectedOddsType').innerText = document.getElementById('oddsType_' + _oddsType).innerText;
+                var value = getCookie("Time_Zone");
+                if (value == null || value == "") document.getElementById("selectedTimeZone").innerText = document.getElementById('timeZone_auto').innerText;
+                else document.getElementById('selectedTimeZone').innerText = document.getElementById('timeZone_' + _timeZone).innerText;
+            </script>
+            <div id="top">
+                <div id="topAdDiv" class="_6t4e2g0c4q3c3o354nh">
+                    <script type="text/javascript">
+                        if (typeof (getTop) != "undefined") {
+                            getTop("top");
+                        }
+                    </script>
+                </div>
+                <div class="top">
+                    <span id="logoSpan" onclick="window.location.href ='//www.nowgoal.net/'" style="cursor: pointer;">
+                        <img alt="nowgoal logo" class="weblogo" src="/images/logo.svg">
+                    </span>
+                    <div class="loginBox">
+                        <div id="login_icon">
+                            <div title="Sign In" class="wd-white"
+                                onclick="handleBackFromBf2('//tips.nowgoal.net/account/login')"><span
+                                    class="sign_in_btn">Sign In</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fulltab">
+                <div id="newtop">
+                    <ul id="menu">
+                        <li id="ball9"><a href="//www.nowgoal.net/predictions"><i></i>Predictions</a></li>
+                        <li id="ball1"><a href="//www.nowgoal.net" class="tab_on"><i></i>Football</a></li>
+                        <li id="ball2"><a href="//www.nowgoal.net/basketball"><i></i>Basketball</a></li>
+                        <li id="ball5"><a href="//sports.nowgoal.net/baseball"><i></i>Baseball</a></li>
+                        <li id="ball3"><a href="//sports.nowgoal.net/tennis"><i></i>Tennis</a></li>
+                        <li id="ball12"><a href="//www.nowgoal.net/adcontact"><i></i>Business</a></li>
+
+                    </ul>
+                    <ul class="menu2" style="">
+                        <li><a href="//www.nowgoal.net" class="sub1_1">Livescore</a></li>
+                        <li><a href="//www.nowgoal.net/football/favorites"><i
+                                    class="icon iconfont icon-font-collect-on"></i>Favorites<i id="favCount"></i></a>
+                        </li>
+
+                        <li><a href="//www.nowgoal.net/aseanchampionship" style="color: #ffd023;">ASEAN Cup 2026</a>
+                        </li>
+                        <li><a href="//www.nowgoal.net/football/results" class="sub1_2 ">Results</a></li>
+                        <li><a href="//www.nowgoal.net/football/fixture" class="sub1_3 ">Schedule</a></li>
+                        <li><a href="//tips.nowgoal.net">Community<i class="badge_fill">Hot</i></a></li>
+
+                        <li><a href="/" class="sub1_9 on">Statistics</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            if (typeof (GetAvatar) == 'function') GetAvatar('//user2.nowgoal.net/');
+            /*收藏赛事数量标识*/
+            _counFavMatchTimmer = setTimeout(countFavMatch());
+            // 初始化当前语种
+            initLanguage();
+        </script>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJ92V9MJ" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe>
+        </noscript>
+
+
+        <div class="crumbs" style="">
+            <a class="off" href="//www.nowgoal.net/">Football</a><span>&gt;</span>
+            <h1>ASEAN Championship Statistics, Schedule, Standings</h1>
+        </div>
+
+        <div id="info">
+
+
+
+            <div class="header">
+                <div id="imgBox" class=""><img alt="ASEAN Championship"
+                        src="//imgcms.thscore.fun/football/Image/league_match/images/1kt3k94zz914.png" width="50"></div>
+                <div class="title-box">
+                    <div id="title" class="title">ASEAN Championship</div>
+                    <div id="seasonBox" class="selectbox">
+                        <text>2026</text>
+                        <ul class="selectpop">
+                            <li class="on" onclick="changeSeason('')">2026</li>
+                            <li onclick="changeSeason('2024-2025')">2024-2025</li>
+                            <li onclick="changeSeason('2022-2023')">2022-2023</li>
+                            <li onclick="changeSeason('2021-2022')">2021-2022</li>
+                            <li onclick="changeSeason('2018')">2018</li>
+                            <li onclick="changeSeason('2016')">2016</li>
+                            <li onclick="changeSeason('2014')">2014</li>
+                            <li onclick="changeSeason('2012')">2012</li>
+                            <li onclick="changeSeason('2010')">2010</li>
+                            <li onclick="changeSeason('2008')">2008</li>
+                            <li onclick="changeSeason('2007')">2007</li>
+                            <li onclick="changeSeason('2004-2005')">2004-2005</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="favLeagueIcon" class="start on" onclick="followLeague('1124')">
+                    <i class="icon iconfont icon-font-collect-on"></i>
+                </div>
+            </div>
+
+            <script>
+                function followLeague(id) {
+                    var favLeague = Config.getFavLeagueIds();
+                    var index = favLeague.indexOf(id.toString());
+                    if (index == -1) {
+                        favLeague.push(id.toString());
+                        Config.setFavLeagueIds(favLeague);
+                        $("#favLeagueIcon").addClass("on");
+                        // $("#favLeagueIcon i").removeClass("icon-font-collect-off").addClass("icon-font-collect-on")
+                    }
+                    else {
+                        favLeague.splice(index, 1);
+                        Config.setFavLeagueIds(favLeague);
+                        $("#favLeagueIcon").removeClass("on");
+                        // $("#favLeagueIcon i").removeClass("icon-font-collect-on").addClass("icon-font-collect-off")
+                    }
+                }
+
+
+            </script>
+
+            <div class="box">
+
+                <div class="left-side">
+
+
+
+                    <script>
+                        const _defaultOddsKey = "L";
+                        const _defaultCompanyId = 8;
+                        const _defaultEuroCompanyId = 281;
+                    </script>
+
+                    <div id="schedule" class="plates schedule">
+                        <h2>Schedule</h2>
+                        <div class="stage" onclick="schedule.handleStageClick()"><span stage="28705" class="">Qualifi
+                                1</span><span stage="28706" class="">Group stage</span><span class="current on"
+                                stage="28989">Semifinal</span></div>
+                        <div class="round" onclick="schedule.handleRoundClick()"><span round="A" stage="28706"
+                                style="display: none;" class="">A</span><span round="B" stage="28706"
+                                style="display: none;" class="">B</span></div>
+
+                        <div class="list">
+                            <div class="title">
+                                <span class="start"></span>
+                                <span class="date">Date</span>
+                                <span class="icon"></span>
+                                <span class="home">Home</span>
+                                <span class="score">Score</span>
+                                <span class="away">Away</span>
+                                <span class="ht">HT</span>
+                                <span class="odds selectbox">
+                                    <text>AH</text>
+                                    <ul class="selectpop" onclick="schedule.toggleOddsType()">
+                                        <li type="L" class="on">AH</li>
+                                        <li type="O">1X2</li>
+                                        <li type="T">OU</li>
+                                    </ul>
+                                </span>
+                            </div>
+                            <div class="schedulis" page="1" matchid="3061002" score="1 - 3" state="-1"><span
+                                    class="start"><i id="favM_3061002" mid="3061002"
+                                        class="icon iconfont icon-font-collect-off add-info favM"></i></span><span
+                                    class="date" name="timeData" data-tf="5" data-t="2026-08-15 21:00">15-08
+                                    20:00</span><span class="icon"><i class="icon iconfont icon-icon-live1"
+                                        onclick="soccerInPage.detail('3061002','Singapore','Thailand','ASEAN Championship',true,'#mactbox-black')"></i></span><span
+                                    class="home">
+
+
+                                    <span onclick="toTeam('892')">Singapore</span><img onclick="toTeam('892')"
+                                        src="//imgcms.thscore.fun//mini/fbteam/892.png" class=""></span><span
+                                    class="score"
+                                    onclick="soccerInPage.detail('3061002','Singapore','Thailand','ASEAN Championship',true)">1
+                                    - 3</span><span class="away"><img onclick="toTeam('886')"
+                                        src="//imgcms.thscore.fun//mini/fbteam/886.png" class=""><span
+                                        onclick="toTeam('886')">Thailand</span>
+
+
+                                </span><span class="ht">0-2</span><span
+                                    class="odds"><span>1.00</span><span>-0.5/1</span><span
+                                        class="tocolor">0.80</span></span></div>
+
+                            <div class="schedulis" page="1" matchid="3061003" score="0 - 2" state="-1"><span
+                                    class="start"><i id="favM_3061003" mid="3061003"
+                                        class="icon iconfont icon-font-collect-off add-info favM"></i></span><span
+                                    class="date" name="timeData" data-tf="5" data-t="2026-08-16 21:00">16-08
+                                    20:00</span><span class="icon"><i class="icon iconfont icon-icon-live1"
+                                        onclick="soccerInPage.detail('3061003','Malaysia','Vietnam','ASEAN Championship',true,'#mactbox-black')"></i></span><span
+                                    class="home">
+
+
+                                    <span onclick="toTeam('889')">Malaysia</span><img onclick="toTeam('889')"
+                                        src="//imgcms.thscore.fun//mini/fbteam/889.png" class=""></span><span
+                                    class="score"
+                                    onclick="soccerInPage.detail('3061003','Malaysia','Vietnam','ASEAN Championship',true)">0
+                                    - 2</span><span class="away"><img onclick="toTeam('883')"
+                                        src="//imgcms.thscore.fun//mini/fbteam/883.png" class=""><span
+                                        onclick="toTeam('883')">Vietnam</span>
+
+
+                                </span><span class="ht">0-1</span><span
+                                    class="odds"><span>0.95</span><span>-0.5/1</span><span
+                                        class="tocolor">0.85</span></span></div>
+
+                            <div class="schedulis" page="1" matchid="3061004" score="-" state="0"><span class="start"><i
+                                        id="favM_3061004" mid="3061004"
+                                        class="icon iconfont icon-font-collect-off add-info favM"></i></span><span
+                                    class="date" name="timeData" data-tf="5" data-t="2026-08-18 21:00">18-08
+                                    20:00</span><span class="icon"><i class="icon iconfont icon-icon-live1 hide"
+                                        onclick="soccerInPage.detail('3061004','Thailand','Singapore','ASEAN Championship',true,'#mactbox-black')"></i></span><span
+                                    class="home">
+
+
+                                    <span onclick="toTeam('886')">Thailand</span><img onclick="toTeam('886')"
+                                        src="//imgcms.thscore.fun//mini/fbteam/886.png" class=""></span><span
+                                    class="score"
+                                    onclick="soccerInPage.analysis('3061004','Thailand','Singapore','ASEAN Championship',true)">-</span><span
+                                    class="away"><img onclick="toTeam('892')"
+                                        src="//imgcms.thscore.fun//mini/fbteam/892.png" class=""><span
+                                        onclick="toTeam('892')">Singapore</span>
+
+
+                                </span><span class="ht"></span><span
+                                    class="odds"><span>1.00</span><span>1.5</span><span>0.80</span></span></div>
+
+                            <div class="schedulis" page="1" matchid="3061005" score="-" state="0"><span class="start"><i
+                                        id="favM_3061005" mid="3061005"
+                                        class="icon iconfont icon-font-collect-off add-info favM"></i></span><span
+                                    class="date" name="timeData" data-tf="5" data-t="2026-08-19 21:00">19-08
+                                    20:00</span><span class="icon"><i class="icon iconfont icon-icon-live1 hide"
+                                        onclick="soccerInPage.detail('3061005','Vietnam','Malaysia','ASEAN Championship',true,'#mactbox-black')"></i></span><span
+                                    class="home">
+
+
+                                    <span onclick="toTeam('883')">Vietnam</span><img onclick="toTeam('883')"
+                                        src="//imgcms.thscore.fun//mini/fbteam/883.png" class=""></span><span
+                                    class="score"
+                                    onclick="soccerInPage.analysis('3061005','Vietnam','Malaysia','ASEAN Championship',true)">-</span><span
+                                    class="away"><img onclick="toTeam('889')"
+                                        src="//imgcms.thscore.fun//mini/fbteam/889.png" class=""><span
+                                        onclick="toTeam('889')">Malaysia</span>
+
+
+                                </span><span class="ht"></span><span class="odds"></span></div>
+                        </div>
+
+                        <div class="page-switcher" id="schedulePager" style="display: none;">
+                        </div>
+                    </div>
+
+
+                    <script type="text/template" id="matchTPL">
+    <div class="schedulis" page="{$Page}" matchid="{$ID}" score="{$Score}" state="{$State}">
+        <span class="start">
+            <i id="favM_{$ID}" mid="{$ID}" class="icon iconfont icon-font-collect-off add-info favM"></i>
+        </span>
+        <span class="date" name="timeData" data-tf="{$DateFormat}" data-t="{$E8Date}">{$Date}</span>
+        <span class="icon">
+            <i class="icon iconfont icon-icon-live1 hide" onclick="soccerInPage.detail('{$ID}','{$HomeName}','{$AwayName}','{$SclassName}',true,'#mactbox-black')"></i>
+        </span>
+        <span class="home">
+            {$HomeRedCard}
+            {$HomeRank}
+            <span onclick="toTeam('{$HomeID}')">{$HomeName}</span>
+            <img  onclick="toTeam('{$HomeID}')" src="{$HomeLogo}" class="skeleton-animate"/>
+        </span>
+        <span class="score" onclick="{$ClickHandle}">{$ScoreHTML}</span>
+        <span class="away">
+            <img onclick="toTeam('{$AwayID}')" src="{$AwayLogo}" class="skeleton-animate"/>
+            <span onclick="toTeam('{$AwayID}')">{$AwayName}</span>
+            {$AwayRank}
+            {$AwayRedCard}
+        </span>
+        <span class="ht">{$HTScore}</span>
+        <span class="odds">
+        </span>
+    </div>
+</script>
+
+
+                    <script type="text/template" id="explainTPL">
+    <div class="explain" page="{$Page}">
+        {$Explain}
+    </div>
+</script>
+
+
+                    <script type="text/template" id="boundTPL">
+    <div class="bound" page="{$Page}">
+        <span class="home" onclick="toTeam('{$HomeID}')">
+            <span>{$HomeName}</span>
+            <img src="{$HomeLogo}" class="skeleton-animate"/>
+        </span>
+        <span class="score">
+            <span class="{$HomeScoreMark}">{$HomeScore}</span> - <span class="{$AwayScoreMark}">{$AwayScore}</span>
+        </span>
+        <span class="away" onclick="toTeam('{$AwayID}')">
+            <img src="{$AwayLogo}" class="skeleton-animate"/>
+            <span>{$AwayName}</span>
+        </span>
+    </div>
+</script>
+
+
+
+
+                    <div id="drawPlates" class="draw plates" style="display:none;">
+                        <h2>Match Chart</h2>
+
+                        <div class="bracket-wrap">
+                            <div id="drawGroup" class="progress"></div>
+                            <div class="bracket" id="bracket"></div>
+                        </div>
+
+                    </div>
+
+
+                    <script type="text/template" id="drawRoundTpl">
+    <div class="round">
+        <div class="matches" data-draw-g="{$groupId}"></div>
+    </div>
+</script>
+
+
+                    <script type="text/template" id="drawTeamTpl">
+    <div class="match">
+        <div class="team {$homeWin}">
+            <img src="{$homePic}" />
+            <div class="name">{$homeName}</div>
+            <div class="score"><span>{$homeScore}</span><span>{$homeScore2}</span></div>
+        </div>
+        <div class="team {$awayWin}">
+            <img src="{$awayPic}" />
+            <div class="name">{$awayName}</div>
+            <div class="score"><span>{$awayScore}</span><span>{$awayScore2}</span></div>
+        </div>
+    </div>
+</script>
+
+
+                    <script type="text/template" id="drawDefaultTpl">
+    <div class="match">
+        <div class="team">
+            <img src="/images/teamicon.png" />
+            <div class="name">TBD</div>
+        </div>
+        <div class="team">
+            <img src="/images/teamicon.png" />
+            <div class="name">TBD</div>
+        </div>
+    </div>
+</script>
+
+
+
+
+                    <div id="techStatsPlates" class="plates stat" style="">
+                        <h2>Tech Stats</h2>
+                        <div class="toolitem">
+                            <div id="techKind" class="segmented-buttons middle">
+                                <span class="background-indicator two"></span>
+                                <span onclick="switchTechStats(1, this, true)" data-tech-kind="1" class="">Player</span>
+                                <span onclick="switchTechStats(2, this, true)" data-tech-kind="2" class="on">Team</span>
+                            </div>
+                            <div id="techType" class="segmented-buttons">
+                                <span class="background-indicator"></span>
+                                <span onclick="switchTechStats(1, this)" data-tech-type="1" class="on">Total</span>
+                                <span onclick="switchTechStats(2, this)" data-tech-type="2">Home</span>
+                                <span onclick="switchTechStats(3, this)" data-tech-type="3">Away</span>
+                            </div>
+                            <div id="techPlayerDataType" class="selectbox" style="display: none;">
+                                <text>Goals(P)</text>
+                                <ul class="selectpop">
+                                    <li data-tech-dtype="1" data-tech-sort="52" onclick="changeTechDataType(1, this)"
+                                        class="on">Goals(P)</li>
+                                    <li data-tech-dtype="2" data-tech-sort="15" onclick="changeTechDataType(1, this)">
+                                        Assists</li>
+                                    <li data-tech-dtype="3" data-tech-sort="33" onclick="changeTechDataType(1, this)">
+                                        Red/Yellow</li>
+                                    <li data-tech-dtype="4" data-tech-sort="10" onclick="changeTechDataType(1, this)">
+                                        Rating</li>
+                                    <li data-tech-dtype="5" data-tech-sort="3" onclick="changeTechDataType(1, this)">
+                                        Mins(Avg)</li>
+                                    <li data-tech-dtype="6" data-tech-sort="6" onclick="changeTechDataType(1, this)">
+                                        Shots/OT</li>
+                                    <li data-tech-dtype="7" data-tech-sort="12" onclick="changeTechDataType(1, this)">
+                                        Passes/Rate</li>
+                                    <li data-tech-dtype="8" data-tech-sort="14" onclick="changeTechDataType(1, this)">
+                                        Key Passes</li>
+                                    <li data-tech-dtype="9" data-tech-sort="24" onclick="changeTechDataType(1, this)">
+                                        Tackles</li>
+                                    <li data-tech-dtype="10" data-tech-sort="25" onclick="changeTechDataType(1, this)">
+                                        Interceptions</li>
+                                    <li data-tech-dtype="11" data-tech-sort="26" onclick="changeTechDataType(1, this)">
+                                        Clearances</li>
+                                    <li data-tech-dtype="12" data-tech-sort="29" onclick="changeTechDataType(1, this)">
+                                        Steal</li>
+                                    <li data-tech-dtype="13" data-tech-sort="32" onclick="changeTechDataType(1, this)">
+                                        Fouls</li>
+                                    <li data-tech-dtype="14" data-tech-sort="8" onclick="changeTechDataType(1, this)">
+                                        Fouled</li>
+                                    <li data-tech-dtype="15" data-tech-sort="22" onclick="changeTechDataType(1, this)">
+                                        Dribbles</li>
+                                </ul>
+                            </div>
+                            <div id="techTeamDataType" class="selectbox" style="">
+                                <text>Goals</text>
+                                <ul class="selectpop">
+                                    <li data-tech-dtype="1" data-tech-sort="20" onclick="changeTechDataType(2, this)"
+                                        class="on">Goals</li>
+                                    <li data-tech-dtype="2" data-tech-sort="21" onclick="changeTechDataType(2, this)">
+                                        Conceded</li>
+                                    <li data-tech-dtype="3" data-tech-sort="2" onclick="changeTechDataType(2, this)">
+                                        Shots</li>
+                                    <li data-tech-dtype="4" data-tech-sort="3" onclick="changeTechDataType(2, this)">
+                                        Shots (SOG)</li>
+                                    <li data-tech-dtype="5" data-tech-sort="32" onclick="changeTechDataType(2, this)">
+                                        Possession</li>
+                                    <li data-tech-dtype="6" data-tech-sort="12" onclick="changeTechDataType(2, this)">
+                                        Corners</li>
+                                    <li data-tech-dtype="7" data-tech-sort="11" onclick="changeTechDataType(2, this)">
+                                        Fouls</li>
+                                    <li data-tech-dtype="8" data-tech-sort="13" onclick="changeTechDataType(2, this)">
+                                        Offsides</li>
+                                    <li data-tech-dtype="9" data-tech-sort="8" onclick="changeTechDataType(2, this)">
+                                        Yellow</li>
+                                    <li data-tech-dtype="10" data-tech-sort="9" onclick="changeTechDataType(2, this)">
+                                        Red</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <ul id="techList" class="list">
+                                <li class="title">
+                                    <span class="rank">R</span>
+                                    <span class="player">Team</span>
+                                    <span class="data">Goals</span>
+                                    <span class="data" style="">Avg</span>
+                                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <li class="statlis"><span class="rank"><em>1</em></span><span class="player"
+                                        onclick="toTeam(883)">
+
+                                        <img src="//imgcms.thscore.fun//mini/fbteam/883.png" class="">
+                                        <span class="name">Vietnam</span></span><span class="data">13</span><span
+                                        class="data" style="">3.3</span></li>
+
+                                <li class="statlis"><span class="rank"><em>2</em></span><span class="player"
+                                        onclick="toTeam(1563)">
+
+                                        <img src="//imgcms.thscore.fun//mini/fbteam/1563.png" class="">
+                                        <span class="name">Myanmar</span></span><span class="data">12</span><span
+                                        class="data" style="">3.0</span></li>
+
+                                <li class="statlis"><span class="rank"><em>3</em></span><span class="player"
+                                        onclick="toTeam(886)">
+
+                                        <img src="//imgcms.thscore.fun//mini/fbteam/886.png" class="">
+                                        <span class="name">Thailand</span></span><span class="data">10</span><span
+                                        class="data" style="">2.5</span></li>
+
+                                <li class="statlis"><span class="rank"><em>4</em></span><span class="player"
+                                        onclick="toTeam(890)">
+
+                                        <img src="//imgcms.thscore.fun//mini/fbteam/890.png" class="">
+                                        <span class="name">Indonesia</span></span><span class="data">9</span><span
+                                        class="data" style="">2.3</span></li>
+
+                                <li class="statlis"><span class="rank"><em>5</em></span><span class="player"
+                                        onclick="toTeam(889)">
+
+                                        <img src="//imgcms.thscore.fun//mini/fbteam/889.png" class="">
+                                        <span class="name">Malaysia</span></span><span class="data">7</span><span
+                                        class="data" style="">1.8</span></li>
+
+                                <li class="statlis"><span class="rank"><em>6</em></span><span class="player"
+                                        onclick="toTeam(1565)">
+
+                                        <img src="//imgcms.thscore.fun//mini/fbteam/1565.png" class="">
+                                        <span class="name">Cambodia</span></span><span class="data">6</span><span
+                                        class="data" style="">1.5</span></li>
+
+                                <li class="statlis"><span class="rank"><em>7</em></span><span class="player"
+                                        onclick="toTeam(892)">
+
+                                        <img src="//imgcms.thscore.fun//mini/fbteam/892.png" class="">
+                                        <span class="name">Singapore</span></span><span class="data">5</span><span
+                                        class="data" style="">1.3</span></li>
+
+                                <li class="statlis"><span class="rank"><em>8</em></span><span class="player"
+                                        onclick="toTeam(1562)">
+
+                                        <img src="//imgcms.thscore.fun//mini/fbteam/1562.png" class="">
+                                        <span class="name">Philippines</span></span><span class="data">5</span><span
+                                        class="data" style="">1.3</span></li>
+
+                                <li class="statlis"><span class="rank"><em>9</em></span><span class="player"
+                                        onclick="toTeam(880)">
+
+                                        <img src="//imgcms.thscore.fun//mini/fbteam/880.png" class="">
+                                        <span class="name">Laos</span></span><span class="data">3</span><span
+                                        class="data" style="">0.8</span></li>
+
+                                <li class="statlis"><span class="rank"><em>10</em></span><span class="player"
+                                        onclick="toTeam(1564)">
+
+                                        <img src="//imgcms.thscore.fun//mini/fbteam/1564.png" class="">
+                                        <span class="name">Timor Leste</span></span><span class="data">0</span><span
+                                        class="data" style="">0.0</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="page-switcher" id="techPager" style="display: none;"><span class="on"
+                                data-page="1"><span>1</span></span></div>
+                    </div>
+
+                    <script type="text/template" id="techItemTpl">
+    <li class="statlis">
+        <span class="rank"><em>{$rank}</em></span>
+        <span class="player" onclick="{$clickEvent}">
+            {$pic1}
+            {$pic2}
+            <span class="name">{$name}</span>
+        </span>
+        <span class="data">{$data1}</span>
+        <span class="data" style="{$data2Css}">{$data2}</span>
+    </li>
+</script>
+
+
+
+
+                    <div id="dataStatDiv" class="plates stat data-stat">
+                        <h2>Statistics</h2>
+                        <div class="toolitem">
+                            <div id="dataStatType" class="selectbox">
+                                <text>Team Goals</text>
+                                <ul class="selectpop">
+                                    <li type="1" onclick="dataStat.switchStat(1)" style="" class="on">Team Goals</li>
+                                    <li type="2" onclick="dataStat.switchStat(2)" style="">HT/FT Results</li>
+                                    <li type="3" onclick="dataStat.switchStat(3)" style="display:none">Team Goal Timings
+                                    </li>
+                                    <li type="4" onclick="dataStat.switchStat(4)" style="display:none">Team Goal
+                                        Differences</li>
+                                    <li type="5" onclick="dataStat.switchStat(5)" style="display:none">Team Correct
+                                        Score Statistics</li>
+                                </ul>
+                            </div>
+                            <div id="bdType" class="segmented-buttons" style="display: none;">
+                                <span class="background-indicator"></span>
+                                <span onclick="dataStat.switchBdType(1,this)" type="1">Win</span>
+                                <span onclick="dataStat.switchBdType(2,this)" type="2">Draw</span>
+                                <span onclick="dataStat.switchBdType(3,this)" type="3">Lose</span>
+                            </div>
+                        </div>
+
+                        <ul class="list" id="statSkeletonList" style="display: none;">
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                            <li class="statlis skeleton" style="border-bottom:none;margin:10px 0;">
+                                <span class="text" style="flex:none;width:20px;height:20px;margin-right:10px;"></span>
+                                <span class="text" style="width:650px;height:20px;"></span>
+                            </li>
+                        </ul>
+
+                        <div id="goalNumList" class="statistics" style="">
+                            <ul class="list">
+                                <li class="title">
+                                    <span class="team">Team</span>
+                                    <span>0 Goals</span>
+                                    <span>1 Goals</span>
+                                    <span>2 Goals</span>
+                                    <span>3 Goals</span>
+                                    <span>4 Goals</span>
+                                    <span>5 Goals</span>
+                                    <span>6+ Goals</span>
+                                </li>
+
+                                <li class="statlis" style=""><span class="team" onclick="toTeam(880)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/880.png" class="" alt="Laos"><span
+                                            class="name">Laos</span></span>
+                                    <span class="">0</span><span class="">0</span><span class="">0</span><span
+                                        class="">0</span><span class="">1</span><span class="">2</span><span
+                                        class="">1</span>
+                                </li>
+
+                                <li class="statlis" style=""><span class="team" onclick="toTeam(883)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/883.png" class="" alt="Vietnam"><span
+                                            class="name">Vietnam</span></span>
+                                    <span class="">1</span><span class="">0</span><span class="">1</span><span
+                                        class="">1</span><span class="">1</span><span class="">0</span><span
+                                        class="">1</span>
+                                </li>
+
+                                <li class="statlis" style=""><span class="team" onclick="toTeam(886)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/886.png" class="" alt="Thailand"><span
+                                            class="name">Thailand</span></span>
+                                    <span class="">0</span><span class="">1</span><span class="">2</span><span
+                                        class="">0</span><span class="">1</span><span class="">1</span><span
+                                        class="">0</span>
+                                </li>
+
+                                <li class="statlis" style=""><span class="team" onclick="toTeam(889)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/889.png" class="" alt="Malaysia"><span
+                                            class="name">Malaysia</span></span>
+                                    <span class="">0</span><span class="">1</span><span class="">2</span><span
+                                        class="">1</span><span class="">1</span><span class="">0</span><span
+                                        class="">0</span>
+                                </li>
+
+                                <li class="statlis" style=""><span class="team" onclick="toTeam(890)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/890.png" class=""
+                                            alt="Indonesia"><span class="name">Indonesia</span></span>
+                                    <span class="">0</span><span class="">0</span><span class="">1</span><span
+                                        class="">2</span><span class="">0</span><span class="">0</span><span
+                                        class="">1</span>
+                                </li>
+
+                                <li class="statlis" style=""><span class="team" onclick="toTeam(892)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/892.png" class=""
+                                            alt="Singapore"><span class="name">Singapore</span></span>
+                                    <span class="">1</span><span class="">0</span><span class="">2</span><span
+                                        class="">1</span><span class="">1</span><span class="">0</span><span
+                                        class="">0</span>
+                                </li>
+
+                                <li class="statlis" style=""><span class="team" onclick="toTeam(1562)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/1562.png" class=""
+                                            alt="Philippines"><span class="name">Philippines</span></span>
+                                    <span class="">0</span><span class="">2</span><span class="">0</span><span
+                                        class="">0</span><span class="">0</span><span class="">2</span><span
+                                        class="">0</span>
+                                </li>
+
+                                <li class="statlis" style=""><span class="team" onclick="toTeam(1563)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/1563.png" class="" alt="Myanmar"><span
+                                            class="name">Myanmar</span></span>
+                                    <span class="">0</span><span class="">0</span><span class="">1</span><span
+                                        class="">1</span><span class="">0</span><span class="">1</span><span
+                                        class="">1</span>
+                                </li>
+
+                                <li class="statlis" style=""><span class="team" onclick="toTeam(1564)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/1564.png" class=""
+                                            alt="Timor Leste"><span class="name">Timor Leste</span></span>
+                                    <span class="">0</span><span class="">0</span><span class="">1</span><span
+                                        class="">3</span><span class="">1</span><span class="">0</span><span
+                                        class="">1</span>
+                                </li>
+
+                                <li class="statlis" style=""><span class="team" onclick="toTeam(1565)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/1565.png" class=""
+                                            alt="Cambodia"><span class="name">Cambodia</span></span>
+                                    <span class="">0</span><span class="">0</span><span class="">0</span><span
+                                        class="">2</span><span class="">1</span><span class="">0</span><span
+                                        class="">1</span>
+                                </li>
+
+                                <li class="statlis" style=""><span class="team" onclick="toTeam(3627)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/3627.png" class=""
+                                            alt="Brunei Darussalam"><span class="name">Brunei Darussalam</span></span>
+                                    <span class="">0</span><span class="">0</span><span class="">0</span><span
+                                        class="">1</span><span class="">1</span><span class="">0</span><span
+                                        class="">0</span>
+                                </li>
+                            </ul>
+                            <div class="page-switcher" id="goalNumPager"></div>
+                        </div>
+
+                        <div id="resultList" class="statistics" style="display:none">
+                            <ul class="list">
+                                <li class="title">
+                                    <span class="team">Team</span>
+                                    <span>W/W</span>
+                                    <span>W/D</span>
+                                    <span>W/L</span>
+                                    <span>D/W</span>
+                                    <span>D/D</span>
+                                    <span>D/L</span>
+                                    <span>L/W</span>
+                                    <span>L/D</span>
+                                    <span>L/L</span>
+                                </li>
+
+                                <li class="statlis"><span class="team" onclick="toTeam(880)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/880.png" class="" alt="Laos"><span
+                                            class="name">Laos</span></span>
+                                    <span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>3</span>
+                                </li>
+
+                                <li class="statlis"><span class="team" onclick="toTeam(883)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/883.png" class="" alt="Vietnam"><span
+                                            class="name">Vietnam</span></span>
+                                    <span>4</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span>
+                                </li>
+
+                                <li class="statlis"><span class="team" onclick="toTeam(886)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/886.png" class="" alt="Thailand"><span
+                                            class="name">Thailand</span></span>
+                                    <span>4</span><span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span>
+                                </li>
+
+                                <li class="statlis"><span class="team" onclick="toTeam(889)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/889.png" class="" alt="Malaysia"><span
+                                            class="name">Malaysia</span></span>
+                                    <span>2</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>0</span><span>2</span>
+                                </li>
+
+                                <li class="statlis"><span class="team" onclick="toTeam(890)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/890.png" class=""
+                                            alt="Indonesia"><span class="name">Indonesia</span></span>
+                                    <span>1</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>0</span><span>0</span><span>1</span>
+                                </li>
+
+                                <li class="statlis"><span class="team" onclick="toTeam(892)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/892.png" class=""
+                                            alt="Singapore"><span class="name">Singapore</span></span>
+                                    <span>2</span><span>0</span><span>0</span><span>0</span><span>2</span><span>0</span><span>0</span><span>0</span><span>1</span>
+                                </li>
+
+                                <li class="statlis"><span class="team" onclick="toTeam(1562)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/1562.png" class=""
+                                            alt="Philippines"><span class="name">Philippines</span></span>
+                                    <span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>2</span>
+                                </li>
+
+                                <li class="statlis"><span class="team" onclick="toTeam(1563)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/1563.png" class="" alt="Myanmar"><span
+                                            class="name">Myanmar</span></span>
+                                    <span>2</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span>
+                                </li>
+
+                                <li class="statlis"><span class="team" onclick="toTeam(1564)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/1564.png" class=""
+                                            alt="Timor Leste"><span class="name">Timor Leste</span></span>
+                                    <span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span><span>1</span><span>0</span><span>3</span>
+                                </li>
+
+                                <li class="statlis"><span class="team" onclick="toTeam(1565)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/1565.png" class=""
+                                            alt="Cambodia"><span class="name">Cambodia</span></span>
+                                    <span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>3</span>
+                                </li>
+
+                                <li class="statlis"><span class="team" onclick="toTeam(3627)"><img
+                                            src="//imgcms.thscore.fun/mini/fbteam/3627.png" class=""
+                                            alt="Brunei Darussalam"><span class="name">Brunei Darussalam</span></span>
+                                    <span>0</span><span>0</span><span>1</span><span>0</span><span>0</span><span>0</span><span>0</span><span>0</span><span>1</span>
+                                </li>
+                            </ul>
+                            <div class="page-switcher" id="resultPager"></div>
+                        </div>
+
+                        <div id="goalTimeList" class="statistics" style="display:none">
+                            <ul class="list">
+                                <li class="title">
+                                    <span class="team">Team</span>
+                                    <span>1<br>-<br>5</span>
+                                    <span>6<br>-<br>10</span>
+                                    <span>11<br>-<br>15</span>
+                                    <span>16<br>-<br>20</span>
+                                    <span>21<br>-<br>25</span>
+                                    <span>26<br>-<br>30</span>
+                                    <span>31<br>-<br>35</span>
+                                    <span>36<br>-<br>40</span>
+                                    <span>41<br>-<br>45</span>
+                                    <span>46<br>-<br>50</span>
+                                    <span>51<br>-<br>55</span>
+                                    <span>56<br>-<br>60</span>
+                                    <span>61<br>-<br>65</span>
+                                    <span>66<br>-<br>70</span>
+                                    <span>71<br>-<br>75</span>
+                                    <span>76<br>-<br>80</span>
+                                    <span>81<br>-<br>85</span>
+                                    <span>86<br>-<br>90</span>
+                                </li>
+                            </ul>
+                            <div class="page-switcher" id="goalTimePager"></div>
+                        </div>
+
+                        <div id="onlyWinList" class="statistics" style="display:none">
+                            <ul class="list">
+                                <li class="title">
+                                    <span class="team">Team</span>
+                                    <span>W3+</span>
+                                    <span>W2</span>
+                                    <span>W1</span>
+                                    <span>Draw</span>
+                                    <span>L1</span>
+                                    <span>L2</span>
+                                    <span>L3+</span>
+                                </li>
+                            </ul>
+                            <div class="page-switcher" id="onlyWinPager"></div>
+                        </div>
+
+                        <div id="bdList" class="statistics" style="display:none">
+                            <ul class="list">
+                                <li class="title">
+                                    <span class="team">Team</span>
+                                    <span>1:0</span>
+                                    <span>2:0</span>
+                                    <span>2:1</span>
+                                    <span>3:0</span>
+                                    <span>3:1</span>
+                                    <span>3:2</span>
+                                    <span>4:0</span>
+                                    <span>4:1</span>
+                                    <span>4:2</span>
+                                    <span>4:3</span>
+                                    <span style="display:none">0:0</span>
+                                    <span style="display:none">1:1</span>
+                                    <span style="display:none">2:2</span>
+                                    <span style="display:none">3:3</span>
+                                    <span style="display:none">4:4</span>
+                                    <span style="display:none">0:1</span>
+                                    <span style="display:none">0:2</span>
+                                    <span style="display:none">1:2</span>
+                                    <span style="display:none">0:3</span>
+                                    <span style="display:none">1:3</span>
+                                    <span style="display:none">2:3</span>
+                                    <span style="display:none">0:4</span>
+                                    <span style="display:none">1:4</span>
+                                    <span style="display:none">2:4</span>
+                                    <span style="display:none">3:4</span>
+                                    <span>Other</span>
+                                </li>
+                            </ul>
+                            <div class="page-switcher" id="bdPager"></div>
+                        </div>
+                    </div>
+
+                    <script type="text/template" id="dataStatItemTpl">
+    <li class="statlis">
+        <span class="team" onclick="toTeam({$teamId})">
+            <img src="//imgcms.thscore.fun/mini/fbteam/{$teamId}.png" class="skeleton-animate" alt="{$name}"/>
+            <span class="name">{$name}</span>
+        </span>
+        {$data}
+    </li>
+</script>
+
+
+
+                    <div id="informationPlates" class="plates" style="">
+                        <h2>Information</h2>
+                        <div class="information">The ASEAN Football Championship does not have a host country; the ASEAN
+                            Football Federation is responsible for coordinating the match venues. The final stage
+                            features ten teams, one of which is determined through the qualifying rounds. The
+                            participating teams are first divided into two groups for a single round-robin tournament,
+                            with the top two teams in each group advancing to the semi-finals. The semi-finals and the
+                            final are played as a two-legged home-and-away knockout format; in the event of a tie on
+                            aggregate, a 30-minute extra time period is played, and if the score remains level after
+                            extra time, a penalty shootout will be held.<br><br>If two or more teams within a group
+                            finish with the same number of points, their rankings will be determined according to the
+                            following order:<br>a) Points earned in head-to-head matches;<br>b) Goal difference in
+                            head-to-head matches;<br>c) Number of goals scored in head-to-head matches;<br>d) Goal
+                            difference;<br>e) Total goals scored;<br>f) Fair play points;<br><br>The ASEAN Football
+                            Championship (ASEAN Football Championship, formerly known as the Tiger Cup) is an
+                            international football tournament held every two years, organized by the ASEAN Football
+                            Federation. All participating countries are from Southeast Asia. The inaugural edition was
+                            held in 1996, and due to sponsorship by Tiger Beer, the tournament was officially named the
+                            Tiger Cup. In 2007, the tournament was renamed the ASEAN Football Championship. In 2008, it
+                            received sponsorship from a Japanese automobile manufacturer, and was therefore officially
+                            named the Suzuki Cup ASEAN Football Championship.</div>
+                    </div>
+                </div>
+
+
+                <div class="right-side">
+
+
+
+                    <div id="standingPlates" class="plates standings" style="">
+                        <div class="tooltitle">
+                            <h2>Standings</h2>
+                            <div id="standingBox" class="selectbox">
+                                <text>Group stage</text>
+                                <ul class="selectpop">
+                                    <li data-st-c="28706" index="1" onclick="changeStanding(this)" class="on">Group
+                                        stage</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="subStandingBox" class="sub selectbox" style="display:none;">
+                            <text></text>
+                            <ul class="selectpop"></ul>
+                        </div>
+
+
+                        <ul id="standingList" class="list">
+
+                            <li class="group gray" data-st-c="28706">Group stage A</li>
+                            <li class="title">
+                                <span class="rank">R</span>
+                                <span class="team">Team</span>
+                                <span>P</span>
+                                <span>W</span>
+                                <span>D</span>
+                                <span>L</span>
+                                <span>GD</span>
+                                <span class="key">PTS</span>
+                            </li>
+
+                            <li class="standlis"><span class="rank"><em>1</em></span><span class="team"
+                                    onclick="toTeam(883)"><img src="//imgcms.thscore.fun//mini/fbteam/883.png"
+                                        class=""><span class="name"
+                                        style="color:red;">Vietnam</span></span><span>4</span><span><span>3</span></span><span><span>1</span></span><span><span>0</span></span><span><span>12</span></span><span
+                                    class="key blue"><b>10</b></span></li>
+
+                            <li class="standlis"><span class="rank"><em>2</em></span><span class="team"
+                                    onclick="toTeam(892)"><img src="//imgcms.thscore.fun//mini/fbteam/892.png"
+                                        class=""><span class="name"
+                                        style="color:red;">Singapore</span></span><span>4</span><span><span>2</span></span><span><span>2</span></span><span><span>0</span></span><span><span>3</span></span><span
+                                    class="key blue"><b>8</b></span></li>
+
+                            <li class="standlis"><span class="rank"><em>3</em></span><span class="team"
+                                    onclick="toTeam(890)"><img src="//imgcms.thscore.fun//mini/fbteam/890.png"
+                                        class=""><span
+                                        class="name">Indonesia</span></span><span>4</span><span><span>2</span></span><span><span>1</span></span><span><span>1</span></span><span><span>4</span></span><span
+                                    class="key blue"><b>7</b></span></li>
+
+                            <li class="standlis"><span class="rank"><em>4</em></span><span class="team"
+                                    onclick="toTeam(1565)"><img src="//imgcms.thscore.fun//mini/fbteam/1565.png"
+                                        class=""><span
+                                        class="name">Cambodia</span></span><span>4</span><span><span>1</span></span><span><span>0</span></span><span><span>3</span></span><span><span>-4</span></span><span
+                                    class="key blue"><b>3</b></span></li>
+
+                            <li class="standlis"><span class="rank"><em>5</em></span><span class="team"
+                                    onclick="toTeam(1564)"><img src="//imgcms.thscore.fun//mini/fbteam/1564.png"
+                                        class=""><span class="name">Timor
+                                        Leste</span></span><span>4</span><span><span>0</span></span><span><span>0</span></span><span><span>4</span></span><span><span>-15</span></span><span
+                                    class="key blue"><b>0</b></span></li>
+                            <li class="group gray" data-st-c="28706">Group stage B</li>
+                            <li class="title">
+                                <span class="rank">R</span>
+                                <span class="team">Team</span>
+                                <span>P</span>
+                                <span>W</span>
+                                <span>D</span>
+                                <span>L</span>
+                                <span>GD</span>
+                                <span class="key">PTS</span>
+                            </li>
+
+                            <li class="standlis"><span class="rank"><em>1</em></span><span class="team"
+                                    onclick="toTeam(886)"><img src="//imgcms.thscore.fun//mini/fbteam/886.png"
+                                        class=""><span class="name"
+                                        style="color:red;">Thailand</span></span><span>4</span><span><span>4</span></span><span><span>0</span></span><span><span>0</span></span><span><span>10</span></span><span
+                                    class="key blue"><b>12</b></span></li>
+
+                            <li class="standlis"><span class="rank"><em>2</em></span><span class="team"
+                                    onclick="toTeam(889)"><img src="//imgcms.thscore.fun//mini/fbteam/889.png"
+                                        class=""><span class="name"
+                                        style="color:red;">Malaysia</span></span><span>4</span><span><span>3</span></span><span><span>0</span></span><span><span>1</span></span><span><span>4</span></span><span
+                                    class="key blue"><b>9</b></span></li>
+
+                            <li class="standlis"><span class="rank"><em>3</em></span><span class="team"
+                                    onclick="toTeam(1563)"><img src="//imgcms.thscore.fun//mini/fbteam/1563.png"
+                                        class=""><span
+                                        class="name">Myanmar</span></span><span>4</span><span><span>2</span></span><span><span>0</span></span><span><span>2</span></span><span><span>5</span></span><span
+                                    class="key blue"><b>6</b></span></li>
+
+                            <li class="standlis"><span class="rank"><em>4</em></span><span class="team"
+                                    onclick="toTeam(1562)"><img src="//imgcms.thscore.fun//mini/fbteam/1562.png"
+                                        class=""><span
+                                        class="name">Philippines</span></span><span>4</span><span><span>1</span></span><span><span>0</span></span><span><span>3</span></span><span><span>-2</span></span><span
+                                    class="key blue"><b>3</b></span></li>
+
+                            <li class="standlis"><span class="rank"><em>5</em></span><span class="team"
+                                    onclick="toTeam(880)"><img src="//imgcms.thscore.fun//mini/fbteam/880.png"
+                                        class=""><span
+                                        class="name">Laos</span></span><span>4</span><span><span>0</span></span><span><span>0</span></span><span><span>4</span></span><span><span>-17</span></span><span
+                                    class="key blue"><b>0</b></span></li>
+                        </ul>
+
+                        <div id="standingColor" style="display:none;"></div>
+
+                        <div class="explain">Remark: The colored team has qualified for the next round.</div>
+                    </div>
+
+
+                    <script type="text/template" id="tplStandingsItem">
+    <li class="standlis">
+        <span class="rank" {$bgColor}><em>{$rank}</em></span>
+        <span class="team" onclick="toTeam({$teamId})">
+            <img src="{$teamPic}" class="skeleton-animate"/>
+            <span class="name" {$qualifiedCss}>{$teamName}</span>
+        </span>
+        <span>{$sum}</span>
+        <span><span>{$win}</span></span>
+        <span><span>{$draw}</span></span>
+        <span><span>{$lose}</span></span>
+        <span><span>{$goalDiff}</span></span>
+        <span class="key blue"><b>{$point}</b></span>
+    </li>
+</script>
+
+
+                    <script type="text/template" id="tplStandingsBlock">
+    <span class="explain">
+        <i {$bgColor}"></i>
+        <span>{$name}</span>
+    </span>
+</script>
+
+
+                    <script type="text/template" id="tplStandingsTitle">
+    <li class="title">
+        <span class="rank">R</span>
+        <span class="team">Team</span>
+        <span>P</span>
+        <span>W</span>
+        <span>D</span>
+        <span>L</span>
+        <span>GD</span>
+        <span class="key">PTS</span>
+    </li>
+</script>
+
+
+
+
+                    <div id="topTeamPlates" class="plates top-team" style="display:none;">
+                        <div class="tooltitle">
+                            <h2>Top Team</h2>
+                            <div id="topTeamSelect" class="selectbox">
+                                <text></text>
+                                <ul class="selectpop"></ul>
+                            </div>
+                        </div>
+
+                        <div id="topTeamBox" class="team-box"></div>
+                    </div>
+
+                    <script type="text/template" id="topTeamRowTpl">
+    <div data-topt="{$lastLine}" class="row"></div>
+</script>
+
+                    <script type="text/template" id="topItemItemTpl">
+    <div class="player-box" onclick="toPlayer({$pID})">
+        <div class="logo">
+            <img class="player" src="//imgcms.thscore.fun//football/image/player/{$pPic}" />
+            <img class="team" src="{$teamPic}" />
+        </div>
+        <div class="name">{$pName}</div>
+    </div>
+</script>
+
+
+
+
+                    <div id="oddsStatPlates" class="plates odds-stat">
+                        <h2>ODDS STATS</h2>
+
+                        <div class="toolitem">
+                            <div id="oddStatsKind" class="segmented-buttons middle">
+                                <span class="background-indicator two"></span>
+                                <span onclick="switchOddsStats(1,this)" class="" data-os-kind="1">AH</span>
+                                <span onclick="switchOddsStats(2,this)" data-os-kind="2" class="on">OU</span>
+                            </div>
+                            <div id="oddStatsType" class="segmented-buttons middle">
+                                <span class="background-indicator"></span>
+                                <span onclick="switchOddsStats(1,this)" class="" data-os-type="1">Total</span>
+                                <span onclick="switchOddsStats(2,this)" data-os-type="2" class="on">Home</span>
+                                <span onclick="switchOddsStats(3,this)" data-os-type="3" class="">Away</span>
+                            </div>
+                            <div id="oddStatsHF" class="segmented-buttons left">
+                                <span class="background-indicator two"></span>
+                                <span onclick="switchOddsStats(1,this)" class="on" data-os-hf="0">FT</span>
+                                <span onclick="switchOddsStats(2,this)" data-os-hf="1" class="">HT</span>
+                            </div>
+                        </div>
+
+                        <ul id="oddsStatsList" class="list">
+                            <li class="title">
+                                <span class="rank">R</span>
+                                <span class="team">Team</span>
+                                <span class="data">Over%</span>
+                            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <li class="oddlis"><span class="rank"><em>1</em></span><span class="team"
+                                    onclick="toTeam(890)"><img src="//imgcms.thscore.fun//mini/fbteam/890.png"
+                                        class=""><span>Indonesia</span></span><span class="data">100%</span></li>
+
+                            <li class="oddlis"><span class="rank"><em>2</em></span><span class="team"
+                                    onclick="toTeam(880)"><img src="//imgcms.thscore.fun//mini/fbteam/880.png"
+                                        class=""><span>Laos</span></span><span class="data">100%</span></li>
+
+                            <li class="oddlis"><span class="rank"><em>3</em></span><span class="team"
+                                    onclick="toTeam(1563)"><img src="//imgcms.thscore.fun//mini/fbteam/1563.png"
+                                        class=""><span>Myanmar</span></span><span class="data">100%</span></li>
+
+                            <li class="oddlis"><span class="rank"><em>4</em></span><span class="team"
+                                    onclick="toTeam(3627)"><img src="//imgcms.thscore.fun//mini/fbteam/3627.png"
+                                        class=""><span>Brunei Darussalam</span></span><span class="data">100%</span>
+                            </li>
+
+                            <li class="oddlis"><span class="rank"><em>5</em></span><span class="team"
+                                    onclick="toTeam(1564)"><img src="//imgcms.thscore.fun//mini/fbteam/1564.png"
+                                        class=""><span>Timor Leste</span></span><span class="data">66.7%</span></li>
+
+                            <li class="oddlis"><span class="rank"><em>6</em></span><span class="team"
+                                    onclick="toTeam(883)"><img src="//imgcms.thscore.fun//mini/fbteam/883.png"
+                                        class=""><span>Vietnam</span></span><span class="data">50.0%</span></li>
+
+                            <li class="oddlis"><span class="rank"><em>7</em></span><span class="team"
+                                    onclick="toTeam(1565)"><img src="//imgcms.thscore.fun//mini/fbteam/1565.png"
+                                        class=""><span>Cambodia</span></span><span class="data">50.0%</span></li>
+
+                            <li class="oddlis"><span class="rank"><em>8</em></span><span class="team"
+                                    onclick="toTeam(1562)"><img src="//imgcms.thscore.fun//mini/fbteam/1562.png"
+                                        class=""><span>Philippines</span></span><span class="data">50.0%</span></li>
+
+                            <li class="oddlis"><span class="rank"><em>9</em></span><span class="team"
+                                    onclick="toTeam(892)"><img src="//imgcms.thscore.fun//mini/fbteam/892.png"
+                                        class=""><span>Singapore</span></span><span class="data">33.3%</span></li>
+
+                            <li class="oddlis"><span class="rank"><em>10</em></span><span class="team"
+                                    onclick="toTeam(886)"><img src="//imgcms.thscore.fun//mini/fbteam/886.png"
+                                        class=""><span>Thailand</span></span><span class="data">0%</span></li>
+
+                            <li class="oddlis"><span class="rank"><em>11</em></span><span class="team"
+                                    onclick="toTeam(889)"><img src="//imgcms.thscore.fun//mini/fbteam/889.png"
+                                        class=""><span>Malaysia</span></span><span class="data">0%</span></li>
+                        </ul>
+                        <div class="page-switcher" id="oddsStatsPager" style="display: none;"><span class="on"
+                                data-page="1"><span>1</span></span></div>
+                    </div>
+
+                    <script type="text/template" id="oddsStatsTpl">
+    <li class="oddlis">
+        <span class="rank"><em>{$rank}</em></span>
+        <span class="team" onclick="toTeam({$teamId})">
+            <img src="{$teamPic}" class="skeleton-animate"/>
+            <span>{$teamName}</span>
+        </span>
+        <span class="data">{$rate}%</span>
+    </li>
+</script>
+
+
+
+
+                    <div id="outrightsOddsPlates" class="plates odds-stat" style="display:none;">
+                        <h2>OUTRIGHTS ODDS</h2>
+
+                        <ul id="outrightsOddsList" class="list">
+                            <li class="title">
+                                <span class="rank">R</span>
+                                <span class="team">Team</span>
+                                <span class="data">Odds</span>
+                            </li>
+                        </ul>
+                        <div class="page-switcher" id="outrightsOddsPager"></div>
+                    </div>
+
+                    <script type="text/template" id="outrightOddsTpl">
+    <li class="oddlis">
+        <span class="rank"><em>{$rank}</em></span>
+        <span class="team" onclick="toTeam({$teamId})">
+            <img src="{$teamPic}" class="skeleton-animate"/>
+            <span>{$teamName}</span>
+        </span>
+        <span class="data">{$odds}</span>
+    </li>
+</script>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/template" id="noDataTPL">
+    <div class="no_data">
+        <p class="logo">
+            <img src="/images/ng/logo_gray.svg" alt="ng logo" />
+        </p>
+        <p class="text">No Data.</p>
+    </div>
+</script>
+
+
+    <script type="text/template" id="errorTPL">
+    <div class="no_data error">
+        <p class="logo">
+            <img src="/images/ng/logo_gray.svg" alt="ng logo" />
+        </p>
+        <p class="text">Sorry..We meet some problems in loading</p>
+    </div>
+</script>
+
+
+    <script type="text/template" id="imgMicroscopeTPL">
+    <div class="avatar-wrap">
+        <img class="avatar {$class}" src="{$src}" alt="{$alt}" />
+        <div class="preview">
+            <img src="{$src}" alt="{$alt}" />
+        </div>
+    </div>
+</script>
+
+
+    <script src="/scripts/v2/league?v=QQgq2LSvjBdFYa0E7pcK1ShX8afNW2APXJiEeHNGF501"></script>
+
+
+
+    <div id="bottom">
+        <div class="webid"><a href="//www.nowgoal.net/">Nowgoal.net</a></div>
+        <div class="network">
+            <a href="https://t.me/nowgoal_bola" target="_blank" rel="nofollow">
+                <img src="/images/share/Telegram.png" alt="Telegram">Telegram
+            </a>
+            <a href="https://www.facebook.com/90bola" target="_blank" rel="nofollow">
+                <img src="/images/share/Facebook.png" alt="Facebook">Facebook
+            </a>
+            <a href="https://x.com/NowgoalScore" target="_blank" rel="nofollow">
+                <img src="/images/share/Twitter.png" alt="X">X
+            </a>
+        </div>
+        <ul class="f_menu">
+            <li><a href="//www.nowgoal.net/aboutus" target="_blank" rel="nofollow">About us</a></li>
+            <li><a href="//www.nowgoal.net/disclaimer" target="_blank" rel="nofollow">Disclaimer</a></li>
+            <li><a href="//www.nowgoal.net/sitemap" target="_blank">SiteMap</a></li>
+            <li><a href="//www.nowgoal.net/feedback" target="_blank" rel="nofollow">Feedback</a></li>
+            <li><a href="//www.nowgoal.net/recommended" target="_blank" rel="nofollow">Recommended Sites</a></li>
+            <li><a href="//www.nowgoal.net/freemap" target="_blank">Free Feed</a></li>
+            <li><a href="https://www.isportsapi.com/?from=nowgoal" target="_blank" class="org">API</a></li>
+            <li><a href="//www.nowgoal.net/policy" target="_blank">Privacy Policy</a></li>
+            <li><a href="//www.nowgoal.net/adcontact" target="_blank" rel="nofollow">Advertise</a></li>
+            <li><a href="//www.nowgoal.net/faq" target="_blank" rel="nofollow">FAQ</a></li>
+            <li><a href="//www.nowgoal.net/blog" target="_blank" rel="nofollow">Blog</a></li>
+        </ul>
+        <div id="p_link" runat="server" visible="false" class="f_menu">
+            <b>Link Partners</b> &nbsp;
+            <font>
+                <a href="https://21b.it.com/" target="_blank" title="12bet">12bet</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="https://78wincom.net/" target="_blank" title="78win">78win</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="https://jiasscience.com" target="_blank" title="kubet">kubet</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="https://live.goaloo903.com/" target="_blank" title="Goaloo">Goaloo</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="https://www.jeomsulive.com/" target="_blank" title="빠른티비">빠른티비</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="https://www.thscore99.com/" target="_blank" title="thscore">thscore</a>
+                <br>
+                <a href="https://qq88.bio/" target="_blank" title="qq88">qq88</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="https://cm88.vision/" target="_blank" title="CM88">CM88</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="https://ufabet.fun/register/" target="_blank" title="สมัคร UFABET">สมัคร UFABET</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="https://mb66az.com/" target="_blank" title="MB66">MB66</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="https://new88.today/" target="_blank" title="new88">new88</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="https://afghanistannewscenter.com/" target="_blank" title="ยูฟ่าเบท">ยูฟ่าเบท</a>
+                <span>&nbsp;|&nbsp;</span>
+                <a href="https://f8bet80.one/" target="_blank" title="F8BET">F8BET</a>
+                <span ctr-hide="1">&nbsp;|&nbsp;</span>
+                <a class="btn open" onclick="ShowAllLink()" ctr-hide="1">Unfold</a>
+                <br style="display:none" ctr-hide="2">
+                <a href="https://789bethp.com/" target="_blank" title="789bet" style="display:none"
+                    ctr-hide="2">789bet</a>
+                <span style="display:none" ctr-hide="2">&nbsp;|&nbsp;</span>
+                <a href="https://hi88.uno/" target="_blank" title="Hi88" style="display:none" ctr-hide="2">Hi88</a>
+                <span style="display:none" ctr-hide="2">&nbsp;|&nbsp;</span>
+                <a href="https://fun88.social/" target="_blank" title="fun88" style="display:none"
+                    ctr-hide="2">fun88</a>
+                <span style="display:none" ctr-hide="2">&nbsp;|&nbsp;</span>
+                <a href="https://keonhacai.bz/" target="_blank" title="kèo nhà cái" style="display:none"
+                    ctr-hide="2">kèo nhà cái</a>
+                <span ctr-hide="2" style="display:none">&nbsp;|&nbsp;</span>
+                <a class="btn retract" onclick="ShowAllLink(false)" ctr-hide="2" style="display:none">Fold up</a>
+            </font>
+        </div>
+
+        <div style="line-height: 30px">Copyright © 2026 Powered By Nowgoal All Rights Reserved.</div>
+    </div>
+
+
+
+    <script type="text/javascript">
+        SyncDarkCheck();
+    </script>
+
+
+
+
+    <style type="text/css">
+        .return-top {
+            position: fixed;
+            z-index: 10;
+            right: 50px;
+            bottom: 50px;
+        }
+
+        .return-top a {
+            cursor: pointer;
+        }
+
+        .return-top img {
+            margin-bottom: 2px;
+        }
+    </style>
+
+    <div id="returnTop" class="return-top">
+        <a href="javascript:window.scroll(0,0);" title="Back to top" id="backTop" style="">
+            <img src="/images/top.gif" alt="Back to top">
+        </a>
+        <br>
+        <a id="sharedButton" style="display: none;" onclick="callSocialMediaWin()" title="Shared">
+            <img src="/images/share.jpg" alt="Shared">
+        </a>
+        <br>
+        <a id="feedBack" style="display: none;" href="//www.nowgoalnews.com/feedback" title="Feedback" target="_blank">
+            <img src="/images/fb.gif" alt="Feedback">
+        </a>
+    </div>
+
+    <script>
+        //请求社媒分享弹窗组件
+        function callSocialMediaWin() {
+            if (typeof (_socialMediaWin) == "undefined") {
+                $.get("/component/socialmediawin", function (res) {
+                    var content = $($.parseHTML(res, document, true)).find("#socialMediaComponent")[0];
+                    $("body").append(content);
+                    _socialMediaWin.open();
+                })
+            } else {
+                _socialMediaWin.open();
+            }
+        }
+    </script>
+
+
+    <script src="/scripts/diff?v=30G1xvSmU3_OABeDpqO2QZQ1aDp4nMoan7FFq7oQWs41"></script>
+
+
+
+</body>

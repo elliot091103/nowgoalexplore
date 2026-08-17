@@ -169,34 +169,66 @@ Includes `Total`, `Home`, and `Guest` sub-objects. Each contains:
 ---
 
 ### 2.7 `LetgoalPan` (Asian Handicap / PanLu Statistics)
-Organized under `TotalPanLu`, `HomePanLu`, `GuestPanLu`, `TotalHalfPanLu`, `HomeHalfPanLu`, and `GuestHalfPanLu`:
-* `[0]` **Rank** (`int`): Standing by handicap win rate.
-* `[1]` **Team ID** (`int`): Team identifier.
-* `[2]` **Total Matches** (`int`): Matches played.
-* `[3]` **Outright Wins** (`int`): Matches won outright.
-* `[4]` **Outright Draws** (`int`): Matches drawn outright.
-* `[5]` **Outright Losses** (`int`): Matches lost outright.
-* `[6]` **Handicap Wins (Covered)** (`int`): Matches winning the AH line.
-* `[7]` **Handicap Pushes (Void)** (`int`): Matches pushing the AH line.
-* `[8]` **Handicap Losses (Failed)** (`int`): Matches losing the AH line.
-* `[9]` **Net Handicap Wins** (`int`): `Handicap Wins - Handicap Losses`.
-* `[10]` **Handicap Win Rate %** (`float`): Percentage of matches covering AH.
-* `[11]` **Handicap Push Rate %** (`float`): Percentage of voided AH matches.
-* `[12]` **Handicap Loss Rate %** (`float`): Percentage of failed AH matches.
+
+Organized under 6 sub-arrays representing combinations of Venue Scope (`Total`, `Home`, `Guest`) and Period Scope (`Full-Time`, `Half-Time`).
+
+#### Frontend UI Control Mapping (`#oddsStatPlates`):
+* `data-os-kind="1"` (AH) + `data-os-hf="0"` (FT):
+  * `data-os-type="1"` (Total) $\rightarrow$ `TotalPanLu`
+  * `data-os-type="2"` (Home) $\rightarrow$ `HomePanLu`
+  * `data-os-type="3"` (Away / Guest) $\rightarrow$ `GuestPanLu`
+* `data-os-kind="1"` (AH) + `data-os-hf="1"` (HT):
+  * `data-os-type="1"` (Total) $\rightarrow$ `TotalHalfPanLu`
+  * `data-os-type="2"` (Home) $\rightarrow$ `HomeHalfPanLu`
+  * `data-os-type="3"` (Away / Guest) $\rightarrow$ `GuestHalfPanLu`
+
+#### Data Row Column Schema (13 Elements):
+| 0-Based Index | 1-Based (SQL) | Field Name | Type | Description / Calculation |
+| :--- | :--- | :--- | :--- | :--- |
+| — | — | `rank` | `INTEGER` | Dynamic UI display rank (`ROW_NUMBER()` sorted by `ah_win_rate_pct DESC, ah_wins DESC, matches_played ASC`) |
+| `[0]` | `p[1]` | `raw_rank` | `INTEGER` | Raw server pre-computed rank sorted primarily by `ah_wins DESC` before rate calculation |
+| `[1]` | `p[2]` | `team_id` | `BIGINT` | Team identifier matching `TeamList` |
+| `[2]` | `p[3]` | `matches_played` | `INTEGER` | Total matches evaluated (`W + D + L` or `AH_W + AH_P + AH_L`) |
+| `[3]` | `p[4]` | `outright_wins` | `INTEGER` | Matches won outright on final/half score |
+| `[4]` | `p[5]` | `outright_draws` | `INTEGER` | Matches drawn outright on final/half score |
+| `[5]` | `p[6]` | `outright_losses` | `INTEGER` | Matches lost outright on final/half score |
+| `[6]` | `p[7]` | `ah_wins` | `INTEGER` | Asian Handicap wins / covered lines (赢盘) |
+| `[7]` | `p[8]` | `ah_pushes` | `INTEGER` | Asian Handicap pushes / voided lines (走盘) |
+| `[8]` | `p[9]` | `ah_losses` | `INTEGER` | Asian Handicap losses / failed lines (输盘) |
+| `[9]` | `p[10]` | `net_ah_wins` | `INTEGER` | Net handicap covers (`ah_wins - ah_losses`) (净胜盘) |
+| `[10]` | `p[11]` | `ah_win_rate_pct` | `DOUBLE` | Handicap cover percentage (`ah_wins / matches_played * 100`) (赢盘率) |
+| `[11]` | `p[12]` | `ah_push_rate_pct` | `DOUBLE` | Handicap push percentage (`ah_pushes / matches_played * 100`) (走盘率) |
+| `[12]` | `p[13]` | `ah_loss_rate_pct` | `DOUBLE` | Handicap loss percentage (`ah_losses / matches_played * 100`) (输盘率) |
 
 ---
 
 ### 2.8 `BigSmallPan` (Over/Under / Total Goals Statistics)
-Organized under `TotalBs`, `HomeBs`, `GuestBs`, `TotalBsHalf`, `HomeBsHalf`, and `GuestBsHalf`:
-* `[0]` **Rank** (`int`): Standing by Over rate.
-* `[1]` **Team ID** (`int`): Team identifier.
-* `[2]` **Total Matches** (`int`): Matches played.
-* `[3]` **Over Count** (`int`): Matches exceeding the total goal line.
-* `[4]` **Push Count** (`int`): Matches landing exactly on the total goal line.
-* `[5]` **Under Count** (`int`): Matches staying below the total goal line.
-* `[6]` **Over Rate %** (`float`): Percentage of matches going Over.
-* `[7]` **Push Rate %** (`float`): Percentage of pushed matches.
-* `[8]` **Under Rate %** (`float`): Percentage of matches going Under.
+
+Organized under 6 sub-arrays representing combinations of Venue Scope (`Total`, `Home`, `Guest`) and Period Scope (`Full-Time`, `Half-Time`).
+
+#### Frontend UI Control Mapping (`#oddsStatPlates`):
+* `data-os-kind="2"` (OU) + `data-os-hf="0"` (FT):
+  * `data-os-type="1"` (Total) $\rightarrow$ `TotalBs`
+  * `data-os-type="2"` (Home) $\rightarrow$ `HomeBs`
+  * `data-os-type="3"` (Away / Guest) $\rightarrow$ `GuestBs`
+* `data-os-kind="2"` (OU) + `data-os-hf="1"` (HT):
+  * `data-os-type="1"` (Total) $\rightarrow$ `TotalBsHalf`
+  * `data-os-type="2"` (Home) $\rightarrow$ `HomeBsHalf`
+  * `data-os-type="3"` (Away / Guest) $\rightarrow$ `GuestBsHalf`
+
+#### Data Row Column Schema (9 Elements):
+| 0-Based Index | 1-Based (SQL) | Field Name | Type | Description / Calculation |
+| :--- | :--- | :--- | :--- | :--- |
+| — | — | `rank` | `INTEGER` | Dynamic UI display rank (`ROW_NUMBER()` sorted by `over_rate_pct DESC, over_count DESC, matches_played ASC`) |
+| `[0]` | `b[1]` | `raw_rank` | `INTEGER` | Raw server pre-computed rank sorted primarily by `over_count DESC` before rate calculation |
+| `[1]` | `b[2]` | `team_id` | `BIGINT` | Team identifier matching `TeamList` |
+| `[2]` | `b[3]` | `matches_played` | `INTEGER` | Total matches evaluated (`over_count + push_count + under_count`) |
+| `[3]` | `b[4]` | `over_count` | `INTEGER` | Matches exceeding the benchmark total goal line (大球) |
+| `[4]` | `b[5]` | `push_count` | `INTEGER` | Matches landing exactly on the total goal line (走盘) |
+| `[5]` | `b[6]` | `under_count` | `INTEGER` | Matches staying below the benchmark total goal line (小球) |
+| `[6]` | `b[7]` | `over_rate_pct` | `DOUBLE` | Over rate percentage (`over_count / matches_played * 100`) (大球率) |
+| `[7]` | `b[8]` | `push_rate_pct` | `DOUBLE` | Push rate percentage (`push_count / matches_played * 100`) (走盘率) |
+| `[8]` | `b[9]` | `under_rate_pct` | `DOUBLE` | Under rate percentage (`under_count / matches_played * 100`) (小球率) |
 
 ---
 

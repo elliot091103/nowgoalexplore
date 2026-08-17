@@ -1,0 +1,67 @@
+rank,raw_rank,team_name,team_id,venue_scope,half_scope,matches_played,over_count,push_count,under_count,over_rate_pct,push_rate_pct,under_rate_pct
+1,1,Cambodia,1565,Guest,Full-Time,2,2,0,0,100.0,0.0,0.0
+2,4,Brunei Darussalam,3627,Guest,Full-Time,1,1,0,0,100.0,0.0,0.0
+3,2,Vietnam,883,Guest,Full-Time,3,2,0,1,66.7,0.0,33.3
+4,3,Thailand,886,Guest,Full-Time,3,2,0,1,66.7,0.0,33.3
+5,5,Laos,880,Guest,Full-Time,2,1,1,0,50.0,50.0,0.0
+6,6,Singapore,892,Guest,Full-Time,2,1,0,1,50.0,0.0,50.0
+7,7,Malaysia,889,Guest,Full-Time,2,1,0,1,50.0,0.0,50.0
+8,8,Philippines,1562,Guest,Full-Time,2,1,0,1,50.0,0.0,50.0
+9,9,Myanmar,1563,Guest,Full-Time,2,1,0,1,50.0,0.0,50.0
+10,10,Timor Leste,1564,Guest,Full-Time,3,1,0,2,33.3,0.0,66.7
+11,11,Indonesia,890,Guest,Full-Time,2,0,0,2,0.0,0.0,100.0
+1,1,Vietnam,883,Guest,Half-Time,3,2,1,0,66.7,33.3,0.0
+2,2,Thailand,886,Guest,Half-Time,3,2,0,1,66.7,0.0,33.3
+3,3,Cambodia,1565,Guest,Half-Time,2,1,0,1,50.0,0.0,50.0
+4,4,Laos,880,Guest,Half-Time,2,1,0,1,50.0,0.0,50.0
+5,5,Myanmar,1563,Guest,Half-Time,2,1,0,1,50.0,0.0,50.0
+6,6,Timor Leste,1564,Guest,Half-Time,3,1,0,2,33.3,0.0,66.7
+7,7,Brunei Darussalam,3627,Guest,Half-Time,1,0,1,0,0.0,100.0,0.0
+8,8,Indonesia,890,Guest,Half-Time,2,0,0,2,0.0,0.0,100.0
+9,9,Singapore,892,Guest,Half-Time,2,0,0,2,0.0,0.0,100.0
+10,10,Malaysia,889,Guest,Half-Time,2,0,0,2,0.0,0.0,100.0
+11,11,Philippines,1562,Guest,Half-Time,2,0,0,2,0.0,0.0,100.0
+1,1,Indonesia,890,Home,Full-Time,2,2,0,0,100.0,0.0,0.0
+2,2,Laos,880,Home,Full-Time,2,2,0,0,100.0,0.0,0.0
+3,3,Myanmar,1563,Home,Full-Time,2,2,0,0,100.0,0.0,0.0
+4,5,Brunei Darussalam,3627,Home,Full-Time,1,1,0,0,100.0,0.0,0.0
+5,4,Timor Leste,1564,Home,Full-Time,3,2,0,1,66.7,0.0,33.3
+6,6,Vietnam,883,Home,Full-Time,2,1,0,1,50.0,0.0,50.0
+7,7,Cambodia,1565,Home,Full-Time,2,1,0,1,50.0,0.0,50.0
+8,8,Philippines,1562,Home,Full-Time,2,1,0,1,50.0,0.0,50.0
+9,9,Singapore,892,Home,Full-Time,3,1,0,2,33.3,0.0,66.7
+10,10,Thailand,886,Home,Full-Time,2,0,0,2,0.0,0.0,100.0
+11,11,Malaysia,889,Home,Full-Time,3,0,1,2,0.0,33.3,66.7
+1,1,Indonesia,890,Home,Half-Time,2,2,0,0,100.0,0.0,0.0
+2,2,Brunei Darussalam,3627,Home,Half-Time,1,1,0,0,100.0,0.0,0.0
+3,3,Laos,880,Home,Half-Time,2,1,0,1,50.0,0.0,50.0
+4,4,Philippines,1562,Home,Half-Time,2,1,0,1,50.0,0.0,50.0
+5,5,Myanmar,1563,Home,Half-Time,2,1,0,1,50.0,0.0,50.0
+6,6,Timor Leste,1564,Home,Half-Time,3,1,1,1,33.3,33.3,33.3
+7,7,Singapore,892,Home,Half-Time,3,1,0,2,33.3,0.0,66.7
+8,8,Cambodia,1565,Home,Half-Time,2,0,0,2,0.0,0.0,100.0
+9,9,Vietnam,883,Home,Half-Time,2,0,0,2,0.0,0.0,100.0
+10,10,Thailand,886,Home,Half-Time,2,0,0,2,0.0,0.0,100.0
+11,11,Malaysia,889,Home,Half-Time,3,0,1,2,0.0,33.3,66.7
+1,6,Brunei Darussalam,3627,Total,Full-Time,2,2,0,0,100.0,0.0,0.0
+2,1,Laos,880,Total,Full-Time,4,3,1,0,75.0,25.0,0.0
+3,2,Myanmar,1563,Total,Full-Time,4,3,0,1,75.0,0.0,25.0
+4,3,Cambodia,1565,Total,Full-Time,4,3,0,1,75.0,0.0,25.0
+5,4,Vietnam,883,Total,Full-Time,5,3,0,2,60.0,0.0,40.0
+6,5,Timor Leste,1564,Total,Full-Time,6,3,0,3,50.0,0.0,50.0
+7,7,Philippines,1562,Total,Full-Time,4,2,0,2,50.0,0.0,50.0
+8,8,Indonesia,890,Total,Full-Time,4,2,0,2,50.0,0.0,50.0
+9,9,Singapore,892,Total,Full-Time,5,2,0,3,40.0,0.0,60.0
+10,10,Thailand,886,Total,Full-Time,5,2,0,3,40.0,0.0,60.0
+11,11,Malaysia,889,Total,Full-Time,5,1,1,3,20.0,20.0,60.0
+1,1,Laos,880,Total,Half-Time,4,2,0,2,50.0,0.0,50.0
+2,3,Indonesia,890,Total,Half-Time,4,2,0,2,50.0,0.0,50.0
+3,4,Myanmar,1563,Total,Half-Time,4,2,0,2,50.0,0.0,50.0
+4,7,Brunei Darussalam,3627,Total,Half-Time,2,1,1,0,50.0,50.0,0.0
+5,2,Vietnam,883,Total,Half-Time,5,2,1,2,40.0,20.0,40.0
+6,6,Thailand,886,Total,Half-Time,5,2,0,3,40.0,0.0,60.0
+7,5,Timor Leste,1564,Total,Half-Time,6,2,1,3,33.3,16.7,50.0
+8,8,Philippines,1562,Total,Half-Time,4,1,0,3,25.0,0.0,75.0
+9,9,Cambodia,1565,Total,Half-Time,4,1,0,3,25.0,0.0,75.0
+10,10,Singapore,892,Total,Half-Time,5,1,0,4,20.0,0.0,80.0
+11,11,Malaysia,889,Total,Half-Time,5,0,1,4,0.0,20.0,80.0

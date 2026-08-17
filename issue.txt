@@ -1,3 +1,7 @@
 Player info
 - position_id in player id is actualy market value (done)
-- the start col should be club matches while the substitutions should be cupmatch matches for player info countsum
+- the start col should be club matches while the substitutions should be cupmatch matches for player info countsum (remove the countsum, dont use this)
+Season detail
+- issue with the odd mapping for season detail data (both overunder and handicap)
+Team detail
+- the countsum parsing need to be recheck

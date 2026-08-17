@@ -328,7 +328,11 @@ all_pan AS (
 SELECT 
     venue_scope,
     half_scope,
-    TRY_CAST(p[1] AS INTEGER) AS rank,
+    ROW_NUMBER() OVER (
+        PARTITION BY venue_scope, half_scope 
+        ORDER BY TRY_CAST(p[11] AS DOUBLE) DESC, TRY_CAST(p[7] AS INTEGER) DESC, TRY_CAST(p[3] AS INTEGER) ASC
+    ) AS rank,
+    TRY_CAST(p[1] AS INTEGER) AS raw_rank,
     TRY_CAST(p[2] AS BIGINT) AS team_id,
     TRY_CAST(p[3] AS INTEGER) AS matches_played,
     TRY_CAST(p[4] AS INTEGER) AS outright_wins,
@@ -352,7 +356,7 @@ CREATE OR REPLACE VIEW v_season_over_under_stats AS
 WITH base AS (
     SELECT BigSmallPan 
     FROM read_json(
-        'json/season_detail.json',
+        'json/season_detail.json', 
         columns = {
             'BigSmallPan': 'STRUCT(TotalBs DOUBLE[][], HomeBs DOUBLE[][], GuestBs DOUBLE[][], TotalBsHalf DOUBLE[][], HomeBsHalf DOUBLE[][], GuestBsHalf DOUBLE[][])'
         }
@@ -374,7 +378,11 @@ all_bs AS (
 SELECT 
     venue_scope,
     half_scope,
-    TRY_CAST(b[1] AS INTEGER) AS rank,
+    ROW_NUMBER() OVER (
+        PARTITION BY venue_scope, half_scope 
+        ORDER BY TRY_CAST(b[7] AS DOUBLE) DESC, TRY_CAST(b[4] AS INTEGER) DESC, TRY_CAST(b[3] AS INTEGER) ASC
+    ) AS rank,
+    TRY_CAST(b[1] AS INTEGER) AS raw_rank,
     TRY_CAST(b[2] AS BIGINT) AS team_id,
     TRY_CAST(b[3] AS INTEGER) AS matches_played,
     TRY_CAST(b[4] AS INTEGER) AS over_count,
